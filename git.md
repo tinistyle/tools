@@ -129,3 +129,5 @@ git push -u origin master  # 推送
 + 克隆远程仓库代码：`git clone 远程仓库地址` （内部已实现`git remote add origin 地址`）。注意：克隆下来的代码默认所在的分支是在master
 + 切换分支：`git checkout 分支`（使用branch查看是查看不到，但是可以切换）
 + 更新本地仓库代码：`git pull 别名 分支`（拉取远程仓库的代码更新本地）
+
+## gongsi dev fenzhi 
