@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>git教程 · 各种小工具使用教程</title>
+        <title>git · 各种小工具使用教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -107,7 +107,7 @@
                 <a href="git.html">
             
                     
-                    git教程
+                    git
             
                 </a>
             
@@ -120,7 +120,20 @@
                 <a href="gitbook.html">
             
                     
-                    gitbook教程
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="gitlab.html">
+            
+                <a href="gitlab.html">
+            
+                    
+                    gitlab
             
                 </a>
             
@@ -158,7 +171,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >git教程</a>
+        <a href="." >git</a>
     </h1>
 </div>
 
@@ -176,6 +189,7 @@
                                 <h1 id="git&#x662F;&#x4EC0;&#x4E48;">git&#x662F;&#x4EC0;&#x4E48;</h1>
 <p>Git&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x8F6F;&#x4EF6;</p>
 <p>&#x4ED3;&#x5E93;&#x5B58;&#x653E;&#x6240;&#x6709;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x672C;&#x5730;&#x4E5F;&#x5B58;&#x653E;&#x6240;&#x6709;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x7684;&#x5065;&#x58EE;&#x6027;&#x3002;&#x96C6;&#x4E2D;&#x5F0F;&#x7248;&#x672C;&#x63A7;&#x5236;&#x8F6F;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7AEF;&#x4ED3;&#x5E93;&#x5B58;&#x653E;&#x6240;&#x6709;&#x7248;&#x672C;&#xFF0C;&#x672C;&#x5730;&#x53EA;&#x5B58;&#x653E;&#x4E00;&#x4E2A;&#x7248;&#x672C;</p>
+<hr>
 <h1 id="git&#x5B89;&#x88C5;">Git&#x5B89;&#x88C5;</h1>
 <p>Windows&#xFF1A;</p>
 <ol>
@@ -190,6 +204,7 @@ yum install git</p>
 <pre><code class="lang-git">git config --global user.email &quot;&#x90AE;&#x7BB1;&quot;
 git config --global user.name &quot;&#x540D;&#x5B57;&quot;
 </code></pre>
+<hr>
 <h1 id="git&#x77E5;&#x8BC6;">Git&#x77E5;&#x8BC6;</h1>
 <h2 id="git&#x4E09;&#x5927;&#x533A;&#x57DF;">Git&#x4E09;&#x5927;&#x533A;&#x57DF;</h2>
 <ul>
@@ -200,6 +215,7 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
 <li>&#x7248;&#x672C;&#x5E93;&#xFF1A;
   &#x901A;&#x8FC7;<code>git commit</code>&#x63D0;&#x4EA4;&#x7684;&#x7248;&#x672C;</li>
 </ul>
+<hr>
 <h1 id="git&#x4F7F;&#x7528;">Git&#x4F7F;&#x7528;</h1>
 <h2 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h2>
 <p>&#x7248;&#x672C;&#x63A7;&#x5236;&#xFF08;Git&#x7BA1;&#x7406;&#x6587;&#x4EF6;&#x5939;&#xFF09;&#x6B65;&#x9AA4;&#xFF1A;</p>
@@ -224,8 +240,48 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
 <p>&#x56DE;&#x6EDA;&#x5230;&#x4EE5;&#x524D;&#x7684;&#x7248;&#x672C;&#x5230;&#x5DE5;&#x4F5C;&#x533A;(&#x672C;&#x5730;-&#x7BA1;&#x7406;&#x72B6;&#x6001;)&#xFF1A;<code>git reset --hard &#x7248;&#x672C;&#x53F7;</code>&#x3002;&#x7248;&#x672C;&#x53F7;&#x4E3A;&#x6BCF;&#x6B21;commit&#x65F6;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x901A;&#x8FC7;<code>git log</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;</p>
 <p>&#x5411;&#x524D;&#x6EDA;&#x52A8;&#x7248;&#x672C;(&#x5C06;&#x7248;&#x672C;&#x5E93;&#x7684;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#x66FF;&#x6362;&#x6210;&#x5DE5;&#x4F5C;&#x533A;)&#xFF1A;<code>git reset --hard &#x7248;&#x672C;&#x53F7;</code>&#x3002;&#x7248;&#x672C;&#x53F7;&#x901A;&#x8FC7;<code>git reflog</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;</p>
 <p>&#x5C06;&#x7248;&#x672C;&#x5E93;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#x56DE;&#x6EDA;&#x5230;&#x6682;&#x5B58;&#x533A;&#xFF1A;<code>git reset --soft &#x7248;&#x672C;&#x53F7;</code></p>
-<p>&#x5C06;&#x6682;&#x5B58;&#x533A;&#x56DE;&#x6EDA;&#x5230;&#x5DE5;&#x4F5C;&#x533A;&#xFF08;&#x4E3A;&#x7BA1;&#x7406;&#x7EA2;&#x8272;&#xFF09;&#xFF1A;<code>git reset HEAD</code></p>
-<p>&#x5C06;&#x7248;&#x672C;&#x5E93;&#x56DE;&#x6EDA;&#x5230;&#x5DE5;&#x4F5C;&#x533A;(&#x672A;&#x7BA1;&#x7406;&#x72B6;&#x6001;-&#x7EA2;&#x8272;)&#xFF1A;<code>git reset --mix &#x7248;&#x672C;&#x53F7;</code></p>
+<p>&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x56DE;&#x6EDA;&#x5230;&#x5DE5;&#x4F5C;&#x533A;&#xFF08;&#x7EFF;&#x8272;&#x2192;&#x672A;&#x7BA1;&#x7406;&#x7EA2;&#x8272;&#xFF09;&#xFF1A;<code>git reset HEAD</code></p>
+<p>&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x56DE;&#x6EDA;&#x5230;&#x5DE5;&#x4F5C;&#x533A;(&#x672A;&#x7BA1;&#x7406;&#x72B6;&#x6001;&#x7EA2;&#x8272;)&#xFF1A;<code>git reset --mix &#x7248;&#x672C;&#x53F7;</code></p>
+<p>&#x5C06;&#x6539;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x6539;&#x56DE;&#x88AB;&#x7BA1;&#x7406;&#x65F6;&#x72B6;&#x6001;&#xFF08;&#x672A;&#x7BA1;&#x7406;&#x72B6;&#x6001;&#x7EA2;&#x8272;&#x2192;&#x5E72;&#x51C0;&#x72B6;&#x6001;&#xFF09;&#xFF1A;<code>git checkout -- &#x6587;&#x4EF6;</code></p>
+<p><img src="img/qu.jpg" alt="&#x56DE;&#x6EDA;&#x64CD;&#x4F5C;"></p>
+<h2 id="&#x5206;&#x652F;">&#x5206;&#x652F;</h2>
+<p>&#x5F00;&#x53D1;&#x65B0;&#x529F;&#x80FD;&#x65F6;&#x53EF;&#x4EE5;&#x53E6;&#x5F00;&#x65B0;&#x5206;&#x652F;&#x5F00;&#x53D1;</p>
+<ul>
+<li>&#x67E5;&#x770B;&#x6240;&#x5904;&#x5206;&#x652F;&#xFF1A;<code>git branch</code></li>
+<li>&#x521B;&#x5EFA;&#x5206;&#x652F;&#xFF1A;<code>git branch &#x5206;&#x652F;&#x540D;</code></li>
+<li>&#x5207;&#x6362;&#x5206;&#x652F;&#xFF1A;<code>git checkout &#x5206;&#x652F;&#x540D;</code></li>
+<li>&#x5408;&#x5E76;&#x5206;&#x652F;&#xFF1A;&#x5148;&#x5207;&#x6362;&#x4F1A;&#x4E3B;&#x5206;&#x652F;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>git merge &#x5206;&#x652F;&#x540D;</code>&#x5408;&#x5E76;&#x5206;&#x652F;</li>
+<li>&#x5220;&#x9664;&#x5206;&#x652F;&#xFF1A;<code>git branch -d &#x5206;&#x652F;&#x540D;</code></li>
+</ul>
+<p>&#x7D27;&#x6025;&#x4FEE;&#x590D;&#x7EBF;&#x4E0A;bug&#x7684;&#x601D;&#x8DEF;&#xFF1A;&#x53E6;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x5206;&#x652F;&#x53BB;&#x4FEE;&#x590D;&#x4E3B;&#x7EBF;&#x4E0A;&#x7684;bug&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x522B;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x7684;&#x5F00;&#x53D1;&#x529F;&#x80FD;&#xFF0C;&#x5B8C;&#x6210;&#x4FEE;&#x590D;&#x4E4B;&#x540E;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;(master)&#x3002;&#x5408;&#x5E76;&#x65B0;&#x529F;&#x80FD;&#x65F6;&#x4F1A;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x65B0;&#x529F;&#x80FD;&#x5206;&#x652F;&#x4E0A;&#x7684;bug&#x6CA1;&#x6709;&#x88AB;&#x4FEE;&#x590D;&#xFF0C;&#x9700;&#x8981;&#x53BB;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x518D;add&#x548C;commit
+<img src="img/fenzhi.png" alt="&#x4FEE;bug&#x601D;&#x8DEF;"></p>
+<h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
+<p>&#x521D;&#x59CB;&#x9879;&#x76EE;&#x5F00;&#x59CB;&#x540E;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x540E;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;dev&#x5206;&#x652F;&#xFF0C;&#x5728;dev&#x5206;&#x652F;&#x4E0A;&#x505A;&#x5F00;&#x53D1;&#x3002;master&#x5206;&#x652F;&#x4E0A;&#x662F;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x7B49;dev&#x4E0A;&#x7684;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x6216;&#x6D4B;&#x8BD5;&#x7A33;&#x5B9A;&#x540E;&#x518D;&#x5408;&#x5E76;&#x5230;master</p>
+<hr>
+<h1 id="github">GitHub</h1>
+<p>&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x4ED3;&#x5E93;</p>
+<p>&#x7ED1;&#x5B9A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x524D;&#xFF0C;&#x73B0;&#x5728;&#x672C;&#x5730;&#x751F;&#x6210;ssh&#x7684;key&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x9A8C;&#x8BC1;(&#x7ED1;&#x5B9A;&#x5F53;&#x524D;&#x7535;&#x8111;)</p>
+<pre><code class="lang-shell">ssh-keygen -t rsa  # &#x4E00;&#x8DEF;&#x56DE;&#x8F66;&#x540E;&#x518D;/root/.ssh/&#x4E0B;&#x751F;&#x6210;&#x6587;&#x4EF6;&#x5BC6;&#x94A5;
+&#x5C06;&#x751F;&#x6210;&#x7684;&#x516C;&#x94A5;id_rsa.pub  &#x7ED1;&#x5B9A;github
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h2>
+<p>&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#xFF08;&#x4E0D;&#x52FE;&#x9009;readme&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x4ED3;&#x5E93;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x6CA1;&#x6709;&#x4ED3;&#x5E93;&#xFF0C;&#x6309;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-shell">echo &quot;# tools&quot; &gt;&gt; README.md  # &#x521B;&#x5EFA;&#x4E00;&#x4E2A;readme.md&#x6587;&#x4EF6;&#xFF0C;
+git init  # &#x521D;&#x59CB;&#x5316;
+git add README.md  # &#x4F7F;&#x7528;git&#x7BA1;&#x7406;
+git commit -m &quot;first commit&quot;  # &#x63D0;&#x4EA4;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;
+git remote add origin git@github.com:tinistyle/tools.git  # &#x7ED1;&#x5B9A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;origin&#x8868;&#x793A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x522B;&#x540D;
+git push -u origin master  # &#x63A8;&#x9001;
+</code></pre>
+<p>&#x672C;&#x5730;&#x5DF2;&#x7ECF;&#x6709;&#x4ED3;&#x5E93;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-shell">git remote add origin git@github.com:tinistyle/tools.git  # &#x7ED1;&#x5B9A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
+git push -u origin master  # &#x63A8;&#x9001;
+</code></pre>
+<h2 id="&#x63A8;&#x9001;">&#x63A8;&#x9001;</h2>
+<p><code>git push -u origin &#x5206;&#x652F;</code></p>
+<h2 id="&#x62C9;&#x53D6;">&#x62C9;&#x53D6;</h2>
+<p>&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x62C9;&#x53D6;&#x4EE3;&#x7801;&#x5230;&#x672C;&#x5730;</p>
+<p><code>git clone &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</code></p>
 
                                 
                                 </section>
@@ -258,7 +314,7 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
                 </a>
                 
                 
-                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: gitbook教程">
+                <a href="gitbook.html" class="navigation navigation-next " aria-label="Next page: gitbook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -269,7 +325,7 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git教程","level":"1.2","depth":1,"next":{"title":"gitbook教程","level":"1.3","depth":1,"path":"gitbook.md","ref":"gitbook.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"git.md","mtime":"2020-04-29T05:36:26.384Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T03:02:46.094Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git","level":"1.2","depth":1,"next":{"title":"gitbook","level":"1.3","depth":1,"path":"gitbook.md","ref":"gitbook.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"git.md","mtime":"2020-04-29T07:20:07.288Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T07:22:55.165Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,5 +1,6 @@
 # 目录
 
 * [简介](README.md)
-* [git教程](git.md)
-* [gitbook教程](gitbook.md)
+* [git](git.md)
+* [gitbook](gitbook.md)
+* [gitlab](gitlab.md)
