@@ -50,7 +50,9 @@ git config --global user.name "名字"
     + 绿色：通过`git add`命令之后被git管理起来的文件
     + 查询不到：通过`git commit`生成了版本
 4. 生成版本：`git commit -m "描述信息"`：生成一个版本
-5. 查看版本：`git log`
+5. 查看版本：`git log`。
+    + `git log --graph`：以流程线图显示版本记录
+    + `git log --graph --pretty=format:"%h %s"`：简洁显示，只显示哈希值和记录字符串
 
 ## 回滚
 回滚到以前的版本到工作区(本地-管理状态)：`git reset --hard 版本号`。版本号为每次commit时生成的，通过`git log`命令查看
@@ -143,6 +145,27 @@ git push -u origin master  # 推送
 变基，使git记录简洁
 
 使用场景：
-1. 合并多个提交记录：
+1. 合并多个提交记录：注意，尽量不要合并已提交到远程仓库的记录
     + `git rebase -i 某个版本号`：合并从当前commit到某个版本号之间的所有记录
-    + `git rebase -i HEAD~数量数字`：合并从当前commit之前的多少个记录。会弹出提示，将后面的记录的pick改成s就可以（表示将下面的记录合并到上面的记录中）
+    + `git rebase -i HEAD~数量数字`：合并从当前commit之前的多少个记录。会弹出提示，将后面的记录的pick改成s就可以（表示将下面的记录合并到上面的记录中）。
+2. 将分支的每个版本合并到主分支上。将多个分支上的提交记录合并到一条记录线上
+    + 先在分支上将主分支rebase到dev分支上`git rebase master`
+    + 回到主分支合并开发分支：`git merge dev`
+3. pull有冲突时需要合并，就会产生分叉，使用fetch+rebase就可以不产生分叉
+    + `git fetch 远程仓库`
+    + `git rebase 远程别名/分支`
+
+注意：在rebase过程中可能会产生冲突，在解决冲突之后，会提示一些命令如add等，最后再继续rebase的时候使用：`git rebase --continue`命令继续进行
+
+## beyond compare
+快速解决冲突的软件
+
+使用：
+1. 安装
+2. 在git中配置
+    ```
+    git config --local merge.tool bc3  # --local表示改配置仅对当前项目(管理的文件夹)有效
+    git config --local mergetool.path 'D:\Program Files\Beyond Compare 4'  # 配置软件安装的路径
+    git config --local mergetool.keepBackip false  # 配置合并时是否保留备份
+    ```
+3. 应用beyond compare解决冲突：`git mergetool`
