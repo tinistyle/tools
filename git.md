@@ -48,7 +48,18 @@ git config --global user.name "名字"
 5. 查看版本：`git log`
 
 ## 回滚
-回滚到以前的版本：`git reset --hard 版本号`。版本号为每次commit时生成的，通过`git log`命令查看
+回滚到以前的版本到工作区(本地-管理状态)：`git reset --hard 版本号`。版本号为每次commit时生成的，通过`git log`命令查看
 
-向前滚动版本：`git reset --hard 版本号`。版本号通过`git reflog`命令查看
+向前滚动版本(将版本库的某个版本替换成工作区)：`git reset --hard 版本号`。版本号通过`git reflog`命令查看
+
+将版本库某个版本回滚到暂存区：`git reset --soft 版本号`
+
+将暂存区回滚到工作区（绿色→未管理红色）：`git reset HEAD`
+
+将版本库回滚到工作区(未管理状态红色)：`git reset --mix 版本号`
+
+将改动的文件改回被管理时状态（红→干净状态）：`git checkout -- 文件`
+
+## 分支
+
 
