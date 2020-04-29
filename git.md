@@ -170,5 +170,9 @@ git push -u origin master  # 推送
     ```
 3. 应用beyond compare解决冲突：`git mergetool`
 
+---
 
 # 协同开发
+
+gitflow流程
+![gitflow](img/gitflow.png)
