@@ -32,7 +32,7 @@ git config --global user.name "名字"
     通过`git commit`提交的版本
 
 # Git使用
-
+## 基础
 版本控制（Git管理文件夹）步骤：
 1. 进入要管理的文件夹
 2. 初始化：`git init`
@@ -48,4 +48,7 @@ git config --global user.name "名字"
 5. 查看版本：`git log`
 
 ## 回滚
-回滚到以前的版本
+回滚到以前的版本：`git reset --hard 版本号`。版本号为每次commit时生成的，通过`git log`命令查看
+
+向前滚动版本：`git reset --hard 版本号`。版本号通过`git reflog`命令查看
+
