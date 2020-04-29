@@ -3,6 +3,7 @@ Git是分布式版本控制软件
 
 仓库存放所有的版本，本地也存放所有的版本，提高系统的健壮性。集中式版本控制软件是一个服务端仓库存放所有版本，本地只存放一个版本
 
+---
 
 # Git安装
 
@@ -22,6 +23,8 @@ git config --global user.email "邮箱"
 git config --global user.name "名字"
 ```
 
+---
+
 # Git知识
 ## Git三大区域
 + 工作区：
@@ -30,6 +33,8 @@ git config --global user.name "名字"
     通过`git add`添加的文件都在暂存区（绿色），可回滚、可提交版本
 + 版本库：
     通过`git commit`提交的版本
+
+---
 
 # Git使用
 ## 基础
@@ -75,3 +80,36 @@ git config --global user.name "名字"
 紧急修复线上bug的思路：另开一个新分支去修复主线上的bug，不影响别的分支上的开发功能，完成修复之后合并到主分支(master)。合并新功能时会有冲突，新功能分支上的bug没有被修复，需要去手动修改文件，之后再add和commit
 ![修bug思路](img/fenzhi.png)
 
+### 工作流
+初始项目开始后第一个版本后应该创建一个dev分支，在dev分支上做开发。master分支上是稳定版本，等dev上的开发完成或测试稳定后再合并到master
+
+---
+
+
+# GitHub
+
+代码托管仓库
+
+绑定远程仓库前，现在本地生成ssh的key进行远程仓库验证(绑定当前电脑)
+
+```shell
+ssh-keygen -t rsa  # 一路回车后再/root/.ssh/下生成文件密钥
+将生成的公钥id_rsa.pub  绑定github
+```
+
+使用：
+创建仓库（不勾选readme，创建一个空仓库），如果本地没有仓库，按以下操作：
+```shell
+echo "# tools" >> README.md  # 创建一个readme.md文件，
+git init  # 初始化
+git add README.md  # 使用git管理
+git commit -m "first commit"  # 提交本地版本库
+git remote add origin git@github.com:tinistyle/tools.git  # 绑定远程仓库，origin表示远程仓库的别名
+git push -u origin master  # 推送
+```
+
+本地已经有仓库时：
+```shell
+git remote add origin git@github.com:tinistyle/tools.git  # 绑定远程仓库
+git push -u origin master  # 推送
+```
