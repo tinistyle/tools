@@ -54,12 +54,20 @@ git config --global user.name "名字"
 
 将版本库某个版本回滚到暂存区：`git reset --soft 版本号`
 
-将暂存区回滚到工作区（绿色→未管理红色）：`git reset HEAD`
+从暂存区回滚到工作区（绿色→未管理红色）：`git reset HEAD`
 
-将版本库回滚到工作区(未管理状态红色)：`git reset --mix 版本号`
+从版本库回滚到工作区(未管理状态红色)：`git reset --mix 版本号`
 
 将改动的文件改回被管理时状态（红→干净状态）：`git checkout -- 文件`
 
 ## 分支
 
+开发新功能时可以另开新分支开发
 
+紧急修复线上bug的思路：另开一个新分支去修复主线上的bug，不影响别的分支上的开发功能，完成修复之后合并到主分支(master)
+
++ 查看所处分支：`git branch`
++ 创建分支：`git branch 分支名`
++ 切换分支：`git checkout 分支名`
+
+哈哈哈
