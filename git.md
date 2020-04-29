@@ -54,9 +54,9 @@ git config --global user.name "名字"
 
 将版本库某个版本回滚到暂存区：`git reset --soft 版本号`
 
-将暂存区回滚到工作区（绿色→未管理红色）：`git reset HEAD`
+从暂存区回滚到工作区（绿色→未管理红色）：`git reset HEAD`
 
-将版本库回滚到工作区(未管理状态红色)：`git reset --mix 版本号`
+从版本库回滚到工作区(未管理状态红色)：`git reset --mix 版本号`
 
 将改动的文件改回被管理时状态（红→干净状态）：`git checkout -- 文件`
 
