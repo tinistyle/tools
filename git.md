@@ -69,5 +69,5 @@ git config --global user.name "名字"
 + 查看所处分支：`git branch`
 + 创建分支：`git branch 分支名`
 + 切换分支：`git checkout 分支名`
-
-哈哈哈
++ 合并分支：先切换会主分支，使用命令`git merge 分支名`合并分支
++ 删除分支：`git branch -d 分支名`
