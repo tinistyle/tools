@@ -81,7 +81,7 @@ git config --global user.name "名字"
 ![修bug思路](img/fenzhi.png)
 
 ### 工作流
-初始项目开始后第一个版本后应该创建一个dev分支，在dev分支上做开发。master分支上是稳定版本，等dev上的开发完成或测试稳定后再合并到master
+初始项目开始后第一个版本后应该创建一个dev分支，在dev分支上做开发。master分支上是稳定版本，等dev上的开发完成或测试稳定后再合并到master。（注意：合并到主分支后再返回dev分支开发时要合并主分支(如果主分支是最新的)，`git merge master`合并之后使dev分支也是在新功能基础上继续开发
 
 ---
 
@@ -120,4 +120,12 @@ git push -u origin master  # 推送
 ## 拉取
 从远程仓库拉取代码到本地
 
-`git clone 远程仓库地址`
+`git clone 远程仓库地址`：拉取下来的分支都有，但是不会显示，可以直接切换分支
+
+
+## 远程仓库命令小结
++ 给远程仓库起别名：`git remote add 别名 远程仓库地址`
++ 给远程仓库推送代码：`git push -u 远程仓库别名 分支`。可以不要-u
++ 克隆远程仓库代码：`git clone 远程仓库地址` （内部已实现`git remote add origin 地址`）。注意：克隆下来的代码默认所在的分支是在master
++ 切换分支：`git checkout 分支`（使用branch查看是查看不到，但是可以切换）
++ 更新本地仓库代码：`git pull 别名 分支`（拉取远程仓库的代码更新本地）
