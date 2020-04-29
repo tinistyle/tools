@@ -97,7 +97,7 @@ ssh-keygen -t rsa  # 一路回车后再/root/.ssh/下生成文件密钥
 将生成的公钥id_rsa.pub  绑定github
 ```
 
-使用：
+## 使用
 创建仓库（不勾选readme，创建一个空仓库），如果本地没有仓库，按以下操作：
 ```shell
 echo "# tools" >> README.md  # 创建一个readme.md文件，
@@ -113,3 +113,11 @@ git push -u origin master  # 推送
 git remote add origin git@github.com:tinistyle/tools.git  # 绑定远程仓库
 git push -u origin master  # 推送
 ```
+
+## 推送
+`git push -u origin 分支`
+
+## 拉取
+从远程仓库拉取代码到本地
+
+`git clone 远程仓库地址`
