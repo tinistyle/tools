@@ -169,3 +169,6 @@ git push -u origin master  # 推送
     git config --local mergetool.keepBackip false  # 配置合并时是否保留备份
     ```
 3. 应用beyond compare解决冲突：`git mergetool`
+
+
+# 协同开发
