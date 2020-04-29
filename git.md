@@ -60,11 +60,11 @@ git config --global user.name "名字"
 
 将改动的文件改回被管理时状态（未管理状态红色→干净状态）：`git checkout -- 文件`
 
+![回滚操作](img/qu.jpg)
+
 ## 分支
 
 开发新功能时可以另开新分支开发
-
-紧急修复线上bug的思路：另开一个新分支去修复主线上的bug，不影响别的分支上的开发功能，完成修复之后合并到主分支(master)。合并新功能时会有冲突，新功能分支上的bug没有被修复，需要去修改文件，之后再add和commit
 
 + 查看所处分支：`git branch`
 + 创建分支：`git branch 分支名`
@@ -72,7 +72,6 @@ git config --global user.name "名字"
 + 合并分支：先切换会主分支，使用命令`git merge 分支名`合并分支
 + 删除分支：`git branch -d 分支名`
 
-<<<<<<< HEAD
-=======
-+ 新功能
->>>>>>> fenzhi
+紧急修复线上bug的思路：另开一个新分支去修复主线上的bug，不影响别的分支上的开发功能，完成修复之后合并到主分支(master)。合并新功能时会有冲突，新功能分支上的bug没有被修复，需要去手动修改文件，之后再add和commit
+![修bug思路](img/fenzhi.png)
+
