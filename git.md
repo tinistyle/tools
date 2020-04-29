@@ -130,4 +130,5 @@ git push -u origin master  # 推送
 + 切换分支：`git checkout 分支`（使用branch查看是查看不到，但是可以切换）
 + 更新本地仓库代码：`git pull 别名 分支`（拉取远程仓库的代码更新本地）
 
-## gongsi dev fenzhi 
+## gongsi dev fenzhi
+## bendi dev fenzhi 
