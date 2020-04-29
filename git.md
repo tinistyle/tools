@@ -22,7 +22,14 @@ git config --global user.email "邮箱"
 git config --global user.name "名字"
 ```
 
-
+# Git知识
+## Git三大区域
++ 工作区：
+    两种文件状态：已管理文件（生成了版本）和新增/修改文件（红色）
++ 暂存区：
+    通过`git add`添加的文件都在暂存区（绿色），可回滚、可提交版本
++ 版本库：
+    通过`git commit`提交的版本
 
 # Git使用
 
@@ -40,3 +47,5 @@ git config --global user.name "名字"
 4. 生成版本：`git commit -m "描述信息"`：生成一个版本
 5. 查看版本：`git log`
 
+## 回滚
+回滚到以前的版本
