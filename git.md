@@ -75,7 +75,7 @@ git config --global user.name "名字"
 
 + 查看所处分支：`git branch`
 + 创建分支：`git branch 分支名`
-+ 切换分支：`git checkout 分支名`
++ 切换分支：`git checkout 分支名`。`git checkout -b 分支`：从当前分支创建一个分支并切换
 + 合并分支：先切换会主分支，使用命令`git merge 分支名`合并分支
 + 删除分支：`git branch -d 分支名`
 
@@ -178,11 +178,17 @@ gitflow流程
 ![gitflow](img/gitflow.png)
 
 # GitHub组织
-创建组织
-并在组织中创建仓库
+创建组织，并在组织中创建仓库，组织可以邀请成员，仓库也可以邀请。组织和仓库中也可以对权限进行设置
+
 
 # 版本管理
 使用tag进行版本管理，在commit之后使用tag命令给此次提交打标签，标记为一个正式版本
 
 1. `git tag -a 版本名 -m "备注信息"`：打标记
 2. `git push origin --tags`：推送到远程仓库，之后再releases会有发布版本
+
+# code review
+github的review：
+在仓库设置中，branchs中选择一个分支，并为当前分支添加规则，勾选合并前拉取审阅请求。成员代码提交完毕之后，可以发起合并请求
+
+成员在new null request中选择合并分支提交给审核者，审核者会收到pull request的请求，可以在网站上上查看，完成后可以直接merge，也可以拉取到本地查看，之后再推送上
