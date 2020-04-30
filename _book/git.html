@@ -234,7 +234,11 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
 </ul>
 </li>
 <li>&#x751F;&#x6210;&#x7248;&#x672C;&#xFF1A;<code>git commit -m &quot;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;&quot;</code>&#xFF1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7248;&#x672C;</li>
-<li>&#x67E5;&#x770B;&#x7248;&#x672C;&#xFF1A;<code>git log</code></li>
+<li>&#x67E5;&#x770B;&#x7248;&#x672C;&#xFF1A;<code>git log</code>&#x3002;<ul>
+<li><code>git log --graph</code>&#xFF1A;&#x4EE5;&#x6D41;&#x7A0B;&#x7EBF;&#x56FE;&#x663E;&#x793A;&#x7248;&#x672C;&#x8BB0;&#x5F55;</li>
+<li><code>git log --graph --pretty=format:&quot;%h %s&quot;</code>&#xFF1A;&#x7B80;&#x6D01;&#x663E;&#x793A;&#xFF0C;&#x53EA;&#x663E;&#x793A;&#x54C8;&#x5E0C;&#x503C;&#x548C;&#x8BB0;&#x5F55;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+</li>
 </ol>
 <h2 id="&#x56DE;&#x6EDA;">&#x56DE;&#x6EDA;</h2>
 <p>&#x56DE;&#x6EDA;&#x5230;&#x4EE5;&#x524D;&#x7684;&#x7248;&#x672C;&#x5230;&#x5DE5;&#x4F5C;&#x533A;(&#x672C;&#x5730;-&#x7BA1;&#x7406;&#x72B6;&#x6001;)&#xFF1A;<code>git reset --hard &#x7248;&#x672C;&#x53F7;</code>&#x3002;&#x7248;&#x672C;&#x53F7;&#x4E3A;&#x6BCF;&#x6B21;commit&#x65F6;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x901A;&#x8FC7;<code>git log</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;</p>
@@ -249,14 +253,14 @@ git config --global user.name &quot;&#x540D;&#x5B57;&quot;
 <ul>
 <li>&#x67E5;&#x770B;&#x6240;&#x5904;&#x5206;&#x652F;&#xFF1A;<code>git branch</code></li>
 <li>&#x521B;&#x5EFA;&#x5206;&#x652F;&#xFF1A;<code>git branch &#x5206;&#x652F;&#x540D;</code></li>
-<li>&#x5207;&#x6362;&#x5206;&#x652F;&#xFF1A;<code>git checkout &#x5206;&#x652F;&#x540D;</code></li>
+<li>&#x5207;&#x6362;&#x5206;&#x652F;&#xFF1A;<code>git checkout &#x5206;&#x652F;&#x540D;</code>&#x3002;<code>git checkout -b &#x5206;&#x652F;</code>&#xFF1A;&#x4ECE;&#x5F53;&#x524D;&#x5206;&#x652F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x5E76;&#x5207;&#x6362;</li>
 <li>&#x5408;&#x5E76;&#x5206;&#x652F;&#xFF1A;&#x5148;&#x5207;&#x6362;&#x4F1A;&#x4E3B;&#x5206;&#x652F;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4;<code>git merge &#x5206;&#x652F;&#x540D;</code>&#x5408;&#x5E76;&#x5206;&#x652F;</li>
 <li>&#x5220;&#x9664;&#x5206;&#x652F;&#xFF1A;<code>git branch -d &#x5206;&#x652F;&#x540D;</code></li>
 </ul>
 <p>&#x7D27;&#x6025;&#x4FEE;&#x590D;&#x7EBF;&#x4E0A;bug&#x7684;&#x601D;&#x8DEF;&#xFF1A;&#x53E6;&#x5F00;&#x4E00;&#x4E2A;&#x65B0;&#x5206;&#x652F;&#x53BB;&#x4FEE;&#x590D;&#x4E3B;&#x7EBF;&#x4E0A;&#x7684;bug&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x522B;&#x7684;&#x5206;&#x652F;&#x4E0A;&#x7684;&#x5F00;&#x53D1;&#x529F;&#x80FD;&#xFF0C;&#x5B8C;&#x6210;&#x4FEE;&#x590D;&#x4E4B;&#x540E;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;(master)&#x3002;&#x5408;&#x5E76;&#x65B0;&#x529F;&#x80FD;&#x65F6;&#x4F1A;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x65B0;&#x529F;&#x80FD;&#x5206;&#x652F;&#x4E0A;&#x7684;bug&#x6CA1;&#x6709;&#x88AB;&#x4FEE;&#x590D;&#xFF0C;&#x9700;&#x8981;&#x53BB;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x518D;add&#x548C;commit
 <img src="img/fenzhi.png" alt="&#x4FEE;bug&#x601D;&#x8DEF;"></p>
 <h3 id="&#x5DE5;&#x4F5C;&#x6D41;">&#x5DE5;&#x4F5C;&#x6D41;</h3>
-<p>&#x521D;&#x59CB;&#x9879;&#x76EE;&#x5F00;&#x59CB;&#x540E;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x540E;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;dev&#x5206;&#x652F;&#xFF0C;&#x5728;dev&#x5206;&#x652F;&#x4E0A;&#x505A;&#x5F00;&#x53D1;&#x3002;master&#x5206;&#x652F;&#x4E0A;&#x662F;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x7B49;dev&#x4E0A;&#x7684;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x6216;&#x6D4B;&#x8BD5;&#x7A33;&#x5B9A;&#x540E;&#x518D;&#x5408;&#x5E76;&#x5230;master</p>
+<p>&#x521D;&#x59CB;&#x9879;&#x76EE;&#x5F00;&#x59CB;&#x540E;&#x7B2C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x540E;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;dev&#x5206;&#x652F;&#xFF0C;&#x5728;dev&#x5206;&#x652F;&#x4E0A;&#x505A;&#x5F00;&#x53D1;&#x3002;master&#x5206;&#x652F;&#x4E0A;&#x662F;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#xFF0C;&#x7B49;dev&#x4E0A;&#x7684;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x6216;&#x6D4B;&#x8BD5;&#x7A33;&#x5B9A;&#x540E;&#x518D;&#x5408;&#x5E76;&#x5230;master&#x3002;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x540E;&#x518D;&#x8FD4;&#x56DE;dev&#x5206;&#x652F;&#x5F00;&#x53D1;&#x65F6;&#x8981;&#x5408;&#x5E76;&#x4E3B;&#x5206;&#x652F;(&#x5982;&#x679C;&#x4E3B;&#x5206;&#x652F;&#x662F;&#x6700;&#x65B0;&#x7684;)&#xFF0C;<code>git merge master</code>&#x5408;&#x5E76;&#x4E4B;&#x540E;&#x4F7F;dev&#x5206;&#x652F;&#x4E5F;&#x662F;&#x5728;&#x65B0;&#x529F;&#x80FD;&#x57FA;&#x7840;&#x4E0A;&#x7EE7;&#x7EED;&#x5F00;&#x53D1;</p>
 <hr>
 <h1 id="github">GitHub</h1>
 <p>&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x4ED3;&#x5E93;</p>
@@ -281,8 +285,149 @@ git push -u origin master  # &#x63A8;&#x9001;
 <p><code>git push -u origin &#x5206;&#x652F;</code></p>
 <h2 id="&#x62C9;&#x53D6;">&#x62C9;&#x53D6;</h2>
 <p>&#x4ECE;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x62C9;&#x53D6;&#x4EE3;&#x7801;&#x5230;&#x672C;&#x5730;</p>
-<p><code>git clone &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</code></p>
+<p><code>git clone &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</code>&#xFF1A;&#x62C9;&#x53D6;&#x4E0B;&#x6765;&#x7684;&#x5206;&#x652F;&#x90FD;&#x6709;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5207;&#x6362;&#x5206;&#x652F;</p>
+<h2 id="&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;&#x5C0F;&#x7ED3;">&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x547D;&#x4EE4;&#x5C0F;&#x7ED3;</h2>
+<ul>
+<li>&#x7ED9;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x8D77;&#x522B;&#x540D;&#xFF1A;<code>git remote add &#x522B;&#x540D; &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</code></li>
+<li>&#x7ED9;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x63A8;&#x9001;&#x4EE3;&#x7801;&#xFF08;&#x4ECE;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF09;&#xFF1A;<code>git push -u &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x522B;&#x540D; &#x5206;&#x652F;</code>&#x3002;&#x53EF;&#x4EE5;&#x4E0D;&#x8981;-u</li>
+<li>&#x514B;&#x9686;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;&#xFF1A;<code>git clone &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</code> &#xFF08;&#x5185;&#x90E8;&#x5DF2;&#x5B9E;&#x73B0;<code>git remote add origin &#x5730;&#x5740;</code>&#xFF09;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x514B;&#x9686;&#x4E0B;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x9ED8;&#x8BA4;&#x6240;&#x5728;&#x7684;&#x5206;&#x652F;&#x662F;&#x5728;master</li>
+<li>&#x66F4;&#x65B0;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;&#xFF1A;<code>git pull &#x522B;&#x540D; &#x5206;&#x652F;</code>&#xFF08;&#x62C9;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x533A;&#xFF09;&#x5E38;&#x7528;</li>
+<li>&#x66F4;&#x65B0;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x4EE3;&#x7801;&#xFF1A;<code>git fetch &#x522B;&#x540D; &#x5206;&#x652F;</code>&#xFF08;&#x62C9;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#xFF09;&#x4E0D;&#x5E38;&#x7528;</li>
+<li>&#x4ECE;&#x672C;&#x5730;&#x7248;&#x672C;&#x5E93;&#x5408;&#x5E76;&#x5230;&#x672C;&#x5730;&#x5DE5;&#x4F5C;&#x533A;&#xFF1A;<code>git merge &#x522B;&#x540D;/&#x5206;&#x652F;</code> &#x6216; <code>git rebase &#x522B;&#x540D;/&#x5206;&#x652F;</code> &#xFF08;&#x5FC5;&#x987B;&#x6709;/&#xFF0C;&#x8868;&#x793A;&#x662F;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#xFF09;</li>
+</ul>
+<p>&#x591A;&#x5730;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;&#xFF1A;&#xFF08;&#x4F8B;&#xFF1A;&#x516C;&#x53F8;-&#x5BB6;&#xFF09;</p>
+<ol>
+<li>&#x516C;&#x53F8;&#x5F00;&#x53D1;&#xFF0C;&#x6CE8;&#x610F;&#x5206;&#x652F;&#x5408;&#x5E76;master&#x4FDD;&#x6301;&#x5F00;&#x53D1;&#x5206;&#x652F;&#x6700;&#x65B0;&#x5904;&#x5F00;&#x59CB;&#xFF0C;&#x5B8C;&#x6210;&#x540E;&#x63A8;&#x9001;&#x5206;&#x652F;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+<li>&#x56DE;&#x5BB6;&#x540E;&#xFF0C;&#x514B;&#x9686;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x9ED8;&#x8BA4;&#x5728;master&#xFF0C;&#x6CE8;&#x610F;&#x5207;&#x6362;&#x5206;&#x652F;&#x540E;&#x5F00;&#x53D1;&#x3002;&#x5B8C;&#x6210;&#x540E;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+<li>&#x5230;&#x516C;&#x53F8;&#xFF0C;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5206;&#x652F;&#xFF0C;&#x7EE7;&#x7EED;&#x5F00;&#x53D1;&#xFF0C;&#x518D;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+<li>&#x56DE;&#x5BB6;&#x540E;&#xFF0C;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5206;&#x652F;&#x3002;&#x7EE7;&#x7EED;&#x5F00;&#x53D1;&#xFF0C;&#x518D;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+<li>&#x5FAA;&#x73AF;&#x5F80;&#x590D;</li>
+<li>&#x5F00;&#x53D1;&#x5B8C;&#x6BD5;&#xFF1A;&#x5408;&#x5E76;&#x5206;&#x652F;&#x5230;master&#xFF0C;&#x63A8;&#x9001;master&#x5206;&#x652F;&#x548C;&#x5F00;&#x53D1;&#x5206;&#x652F;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF08;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x53D1;&#x5206;&#x652F;&#x4E5F;&#x628A;master&#x5408;&#x5E76;&#x4E86;&#xFF09;</li>
+</ol>
+<h2 id="rebase">rebase</h2>
+<p>&#x53D8;&#x57FA;&#xFF0C;&#x4F7F;git&#x8BB0;&#x5F55;&#x7B80;&#x6D01;</p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<ol>
+<li>&#x5408;&#x5E76;&#x591A;&#x4E2A;&#x63D0;&#x4EA4;&#x8BB0;&#x5F55;&#xFF1A;&#x6CE8;&#x610F;&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x5408;&#x5E76;&#x5DF2;&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x8BB0;&#x5F55;<ul>
+<li><code>git rebase -i &#x67D0;&#x4E2A;&#x7248;&#x672C;&#x53F7;</code>&#xFF1A;&#x5408;&#x5E76;&#x4ECE;&#x5F53;&#x524D;commit&#x5230;&#x67D0;&#x4E2A;&#x7248;&#x672C;&#x53F7;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;</li>
+<li><code>git rebase -i HEAD~&#x6570;&#x91CF;&#x6570;&#x5B57;</code>&#xFF1A;&#x5408;&#x5E76;&#x4ECE;&#x5F53;&#x524D;commit&#x4E4B;&#x524D;&#x7684;&#x591A;&#x5C11;&#x4E2A;&#x8BB0;&#x5F55;&#x3002;&#x4F1A;&#x5F39;&#x51FA;&#x63D0;&#x793A;&#xFF0C;&#x5C06;&#x540E;&#x9762;&#x7684;&#x8BB0;&#x5F55;&#x7684;pick&#x6539;&#x6210;s&#x5C31;&#x53EF;&#x4EE5;&#xFF08;&#x8868;&#x793A;&#x5C06;&#x4E0B;&#x9762;&#x7684;&#x8BB0;&#x5F55;&#x5408;&#x5E76;&#x5230;&#x4E0A;&#x9762;&#x7684;&#x8BB0;&#x5F55;&#x4E2D;&#xFF09;&#x3002;</li>
+</ul>
+</li>
+<li>&#x5C06;&#x5206;&#x652F;&#x7684;&#x6BCF;&#x4E2A;&#x7248;&#x672C;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x4E0A;&#x3002;&#x5C06;&#x591A;&#x4E2A;&#x5206;&#x652F;&#x4E0A;&#x7684;&#x63D0;&#x4EA4;&#x8BB0;&#x5F55;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7EBF;&#x4E0A;<ul>
+<li>&#x5148;&#x5728;&#x5206;&#x652F;&#x4E0A;&#x5C06;&#x4E3B;&#x5206;&#x652F;rebase&#x5230;dev&#x5206;&#x652F;&#x4E0A;<code>git rebase master</code></li>
+<li>&#x56DE;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x5408;&#x5E76;&#x5F00;&#x53D1;&#x5206;&#x652F;&#xFF1A;<code>git merge dev</code></li>
+</ul>
+</li>
+<li>pull&#x6709;&#x51B2;&#x7A81;&#x65F6;&#x9700;&#x8981;&#x5408;&#x5E76;&#xFF0C;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;&#x5206;&#x53C9;&#xFF0C;&#x4F7F;&#x7528;fetch+rebase&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x4EA7;&#x751F;&#x5206;&#x53C9;<ul>
+<li><code>git fetch &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</code></li>
+<li><code>git rebase &#x8FDC;&#x7A0B;&#x522B;&#x540D;/&#x5206;&#x652F;</code></li>
+</ul>
+</li>
+</ol>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5728;rebase&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#xFF0C;&#x5728;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x5982;add&#x7B49;&#xFF0C;&#x6700;&#x540E;&#x518D;&#x7EE7;&#x7EED;rebase&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#xFF1A;<code>git rebase --continue</code>&#x547D;&#x4EE4;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;</p>
+<h2 id="beyond-compare">beyond compare</h2>
+<p>&#x5FEB;&#x901F;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#x7684;&#x8F6F;&#x4EF6;</p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x5B89;&#x88C5;</li>
+<li>&#x5728;git&#x4E2D;&#x914D;&#x7F6E;<pre><code> git config --local merge.tool bc3  # --local&#x8868;&#x793A;&#x6539;&#x914D;&#x7F6E;&#x4EC5;&#x5BF9;&#x5F53;&#x524D;&#x9879;&#x76EE;(&#x7BA1;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x5939;)&#x6709;&#x6548;
+ git config --local mergetool.path &apos;D:\Program Files\Beyond Compare 4&apos;  # &#x914D;&#x7F6E;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x7684;&#x8DEF;&#x5F84;
+ git config --local mergetool.keepBackip false  # &#x914D;&#x7F6E;&#x5408;&#x5E76;&#x65F6;&#x662F;&#x5426;&#x4FDD;&#x7559;&#x5907;&#x4EFD;
+</code></pre></li>
+<li>&#x5E94;&#x7528;beyond compare&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF1A;<code>git mergetool</code></li>
+</ol>
+<hr>
+<h1 id="&#x534F;&#x540C;&#x5F00;&#x53D1;">&#x534F;&#x540C;&#x5F00;&#x53D1;</h1>
+<p>gitflow&#x6D41;&#x7A0B;
+<img src="img/gitflow.png" alt="gitflow"></p>
+<h1 id="github&#x7EC4;&#x7EC7;">GitHub&#x7EC4;&#x7EC7;</h1>
+<p>&#x521B;&#x5EFA;&#x7EC4;&#x7EC7;&#xFF0C;&#x5E76;&#x5728;&#x7EC4;&#x7EC7;&#x4E2D;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;&#xFF0C;&#x7EC4;&#x7EC7;&#x53EF;&#x4EE5;&#x9080;&#x8BF7;&#x6210;&#x5458;&#xFF0C;&#x4ED3;&#x5E93;&#x4E5F;&#x53EF;&#x4EE5;&#x9080;&#x8BF7;&#x3002;&#x7EC4;&#x7EC7;&#x548C;&#x4ED3;&#x5E93;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x6743;&#x9650;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;</p>
+<h1 id="&#x7248;&#x672C;&#x7BA1;&#x7406;">&#x7248;&#x672C;&#x7BA1;&#x7406;</h1>
+<p>&#x4F7F;&#x7528;tag&#x8FDB;&#x884C;&#x7248;&#x672C;&#x7BA1;&#x7406;&#xFF0C;&#x5728;commit&#x4E4B;&#x540E;&#x4F7F;&#x7528;tag&#x547D;&#x4EE4;&#x7ED9;&#x6B64;&#x6B21;&#x63D0;&#x4EA4;&#x6253;&#x6807;&#x7B7E;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;&#x4E00;&#x4E2A;&#x6B63;&#x5F0F;&#x7248;&#x672C;</p>
+<ol>
+<li><code>git tag -a &#x7248;&#x672C;&#x540D; -m &quot;&#x5907;&#x6CE8;&#x4FE1;&#x606F;&quot;</code>&#xFF1A;&#x6253;&#x6807;&#x8BB0;</li>
+<li><code>git push origin --tags</code>&#xFF1A;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#xFF0C;&#x4E4B;&#x540E;&#x518D;releases&#x4F1A;&#x6709;&#x53D1;&#x5E03;&#x7248;&#x672C;</li>
+</ol>
+<h1 id="code-review">code review</h1>
+<p>github&#x7684;review&#xFF1A;
+&#x5728;&#x4ED3;&#x5E93;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;branchs&#x4E2D;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#xFF0C;&#x5E76;&#x4E3A;&#x5F53;&#x524D;&#x5206;&#x652F;&#x6DFB;&#x52A0;&#x89C4;&#x5219;&#xFF0C;&#x52FE;&#x9009;&#x5408;&#x5E76;&#x524D;&#x62C9;&#x53D6;&#x5BA1;&#x9605;&#x8BF7;&#x6C42;&#x3002;&#x6210;&#x5458;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x8D77;&#x5408;&#x5E76;&#x8BF7;&#x6C42;</p>
+<p>&#x6210;&#x5458;&#x5728;new null request&#x4E2D;&#x9009;&#x62E9;&#x5408;&#x5E76;&#x5206;&#x652F;&#x63D0;&#x4EA4;&#x7ED9;&#x5BA1;&#x6838;&#x8005;(&#x53EF;&#x4EE5;&#x6307;&#x5B9A;)&#xFF0C;&#x5BA1;&#x6838;&#x8005;&#x4F1A;&#x6536;&#x5230;pull request&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7AD9;&#x4E0A;&#x4E0A;&#x67E5;&#x770B;&#xFF0C;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;merge&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x62C9;&#x53D6;&#x5230;&#x672C;&#x5730;&#x67E5;&#x770B;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x63A8;&#x9001;&#x4E0A;</p>
+<h1 id="&#x7ED9;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x8D21;&#x732E;&#x4EE3;&#x7801;">&#x7ED9;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x8D21;&#x732E;&#x4EE3;&#x7801;</h1>
+<ol>
+<li>fork&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5C06;&#x9879;&#x76EE;&#x62F7;&#x8D1D;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x4ED3;&#x5E93;&#x4E2D;</li>
+<li>&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x4ED3;&#x5E93;&#x4FEE;bug&#x6216;&#x4E8C;&#x6B21;&#x5F00;&#x53D1;</li>
+<li>&#x5728;&#x81EA;&#x5DF1;&#x4ED3;&#x5E93;&#x4E2D;&#x7ED9;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x8005;&#x63D0;&#x4EA4;&#x4FEE;&#x590D;bug&#x7684;&#x7533;&#x8BF7;&#xFF08;pull request&#xFF09;</li>
+</ol>
+<h1 id="&#x8865;&#x5145;">&#x8865;&#x5145;</h1>
+<h2 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h2>
+<p>&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;<code>&#x9879;&#x76EE;/.git/config</code>&#x3002;&#x53EA;&#x5728;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x751F;&#x6548;&#x3002;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;</p>
+<pre><code>git config --local user.name &apos;xxx&apos;
+git config --local user.emall &apos;xx@xx.com&apos;
+</code></pre><p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;<code>~/.gitconfig</code>&#x3002;&#x5BF9;&#x5168;&#x5C40;&#x751F;&#x6548;</p>
+<pre><code>git config --global user.name &apos;xxx&apos;
+git config --global user.emall &apos;xx@xx.com&apos;
+</code></pre><p>&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;<code>/etc/.gitconfig</code>&#x3002;&#x9700;&#x8981;root&#x6743;&#x9650;</p>
+<pre><code>git config --system user.name &apos;xxx&apos;
+git config --system user.emall &apos;xx@xx.com&apos;
+</code></pre><p>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<ol>
+<li>&#x7528;&#x6237;&#x914D;&#x7F6E;</li>
+<li>&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#xFF1A;&#x5982;mergetool</li>
+<li>remote &#x4ED3;&#x5E93;&#x5730;&#x5740;&#x3002;&#x9ED8;&#x8BA4;&#x6DFB;&#x52A0;&#x5728;&#x672C;&#x5730;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#xFF08;--local&#xFF09;</li>
+</ol>
+<h2 id="&#x514D;&#x5BC6;&#x767B;&#x9646;">&#x514D;&#x5BC6;&#x767B;&#x9646;</h2>
+<p>&#x4EE5;&#x524D;&#x7248;&#x672C;&#x7684;git&#x6BCF;&#x6B21;push&#x90FD;&#x9700;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;</p>
+<p>&#x5B9E;&#x73B0;&#x514D;&#x5BC6;&#x767B;&#x9646;&#xFF1A;</p>
+<ul>
+<li>url&#x4E2D;&#x4F53;&#x73B0;<pre><code>  &#x539F;&#x6765;&#x7684;&#x5730;&#x5740;&#xFF1A;https://&#x4ED3;&#x5E93;&#x5730;&#x5740;URL
+  &#x4FEE;&#x6539;&#x7684;&#x5730;&#x5740;&#xFF1A;https://&#x7528;&#x6237;&#x540D;:&#x5BC6;&#x7801;@&#x4ED3;&#x5E93;&#x5730;&#x5740;URL
+  git remote add origin https://&#x7528;&#x6237;&#x540D;:&#x5BC6;&#x7801;@github.com/tinistyle/tools.git
+</code></pre></li>
+<li>&#x901A;&#x8FC7;ssh&#x5B9E;&#x73B0;<ol>
+<li>&#x751F;&#x6210;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;&#xFF1A;<code>ssh-keygen</code>&#x3002;&#x9ED8;&#x8BA4;&#x653E;&#x5728;<code>~/.ssh</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;id_rsa.pub&#x662F;&#x516C;&#x94A5;&#xFF0C;is_rsa&#x79C1;&#x94A5;</li>
+<li>&#x62F7;&#x8D1D;&#x516C;&#x94A5;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4E2D;</li>
+<li>&#x5728;Git&#x672C;&#x5730;&#x4E2D;&#x914D;&#x7F6E;ssh&#x5730;&#x5740;&#xFF1A;<code>git remote add origin git@xxxxxx</code></li>
+</ol>
+</li>
+<li>git&#x81EA;&#x52A8;&#x7BA1;&#x7406;&#x51ED;&#x8BC1;&#xFF08;&#x73B0;&#x5728;&#x624D;&#x6709;&#xFF09;</li>
+</ul>
+<h2 id="git-&#x5FFD;&#x7565;&#x6587;&#x4EF6;">git &#x5FFD;&#x7565;&#x6587;&#x4EF6;</h2>
+<p>&#x5728;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x521B;&#x5EFA;<code>.gitignore</code>&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x5929;&#x4E0A;&#x9700;&#x8981;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#x540D;</p>
+<pre><code>a.h
+!b.h  # &#x9664;&#x4E86;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4EE5;&#x5916;&#x90FD;&#x5FFD;&#x7565;
+*.h  # &#x5FFD;&#x7565;.h&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;
+.gitignore  # &#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x672C;&#x8EAB;
+dir/  # &#x5FFD;&#x7565;dir&#x6587;&#x4EF6;&#x5939;
+*.py[c|b|d]  # &#x5FFD;&#x7565;.py&#x6587;&#x4EF6;&#x4EE5;&#x53CA;.pyc/.pyb/.pyd&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;
+</code></pre><p>&#x66F4;&#x591A;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/github/gitignore&#x3002;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x8BED;&#x8A00;&#x7684;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7C7B;&#x578B;" target="_blank">https://github.com/github/gitignore&#x3002;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x8BED;&#x8A00;&#x7684;&#x5FFD;&#x7565;&#x6587;&#x4EF6;&#x7C7B;&#x578B;</a></p>
+<h2 id="&#x4EFB;&#x52A1;&#x7BA1;&#x7406;">&#x4EFB;&#x52A1;&#x7BA1;&#x7406;</h2>
+<p>issues&#xFF1A;&#x6587;&#x6863;&#x6216;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#xFF0C;&#x63D0;&#x95EE;&#x8BA8;&#x8BBA;&#x7B49;&#xFF08;code&#x65C1;&#x8FB9;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x95EE;&#x9898;&#x6307;&#x6D3E;&#x5177;&#x4F53;&#x4EBA;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x95EE;&#x9898;&#x6253;&#x6807;&#x7B7E;</p>
+<p>wiki&#xFF1A;&#x7C7B;&#x4F3C;&#x767E;&#x79D1;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x9879;&#x76EE;&#x7684;&#x8BF4;&#x660E;</p>
+<h2 id="&#x8865;&#x5145;&#x547D;&#x4EE4;">&#x8865;&#x5145;&#x547D;&#x4EE4;</h2>
+<pre><code>git diff filename  # &#x67E5;&#x770B;&#x6587;&#x4EF6;&#x76F8;&#x5BF9;&#x4E8E;&#x6682;&#x5B58;&#x533A;&#x6539;&#x52A8;&#x4E86;&#x54EA;&#x4E9B;&#x5185;&#x5BB9;&#xFF0C;add&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#x5C31;&#x770B;&#x4E0D;&#x5230;
+git diff --cached filename  # &#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;&#x4E0E;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x6587;&#x4EF6;&#x5BF9;&#x6BD4;
 
+git rm --cached filename  # &#x5C06;&#x6587;&#x4EF6;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x79FB;&#x56DE;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF0C;&#x53D8;&#x56DE;&#x672A;&#x8DDF;&#x8E2A;&#x72B6;&#x6001;
+git rm filename  # &#x540C;&#x65F6;&#x4ECE;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x548C;&#x6682;&#x5B58;&#x533A;&#x5220;&#x9664;&#x6587;&#x4EF6;  -f &#x4E0D;&#x63D0;&#x793A;
+
+git log --oneline  # &#x7B80;&#x5199;&#x67E5;&#x770B;&#x6240;&#x6709;commit
+git log --oneline --decorate  # &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;&#x7684;&#x4FE1;&#x606F;
+git log -p  # &#x8BE6;&#x60C5;&#x67E5;&#x770B;&#xFF0C;&#x5305;&#x62EC;&#x5185;&#x5BB9;&#x7684;&#x53D8;&#x52A8;
+git log -n  # n&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x7684;&#x51E0;&#x6761;&#x63D0;&#x4EA4;&#x4FE1;&#x606F;
+
+git checkout -- filename  # &#x7528;&#x6682;&#x5B58;&#x533A;&#x7684;&#x6587;&#x4EF6;&#x8986;&#x76D6;&#x672C;&#x5730;&#x6587;&#x4EF6;&#xFF0C;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x548C;&#x6682;&#x5B58;&#x533A;&#x4E00;&#x6837;&#xFF0C;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4E0D;&#x53D8;
+git reset HEAD filename  # &#x7528;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x7684;&#x6587;&#x4EF6;&#x8986;&#x76D6;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;&#xFF0C;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4E0E;&#x6682;&#x5B58;&#x533A;&#x4E00;&#x6837;&#xFF0C;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x4E0D;&#x53D8;
+git reset --hard commitID  # &#x56DE;&#x9000;&#x5230;&#x67D0;&#x4E00;&#x6B21;&#x7684;commit
+
+git reflog  # &#x6240;&#x6709;&#x7684;commit&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;
+
+git tag  # &#x67E5;&#x770B;&#x6807;&#x7B7E;
+git tag -a v1.0  # &#x7ED9;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x7684;commit&#x6253;&#x6807;&#x7B7E;&#xFF0C;&#x9700;&#x8981;&#x8F93;&#x5165;&#x5907;&#x6CE8;&#x4FE1;&#x606F;
+git tag -a v2.0 commitID  # &#x7ED9;&#x67D0;&#x4E00;&#x6B21;&#x7684;commit&#x6253;&#x6807;&#x7B7E;
+git show &#x6807;&#x7B7E;&#x540D;  # &#x67E5;&#x770B;&#x5F53;&#x524D;&#x6807;&#x7B7E;&#x5BF9;&#x5E94;&#x7684;commit&#x7684;&#x5185;&#x5BB9;
+git reset --hard &#x6807;&#x7B7E;&#x540D;  # &#x56DE;&#x9000;&#x5230;&#x67D0;&#x6B21;&#x7684;commit
+git tag -d &#x6807;&#x7B7E;&#x540D;  # &#x5220;&#x9664;&#x6807;&#x7B7E;
+</code></pre>
                                 
                                 </section>
                             
@@ -325,7 +470,7 @@ git push -u origin master  # &#x63A8;&#x9001;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"git","level":"1.2","depth":1,"next":{"title":"gitbook","level":"1.3","depth":1,"path":"gitbook.md","ref":"gitbook.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"git.md","mtime":"2020-04-29T07:20:07.288Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T07:22:55.165Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"git","level":"1.2","depth":1,"next":{"title":"gitbook","level":"1.3","depth":1,"path":"gitbook.md","ref":"gitbook.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"git.md","mtime":"2020-04-30T03:31:32.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-30T03:33:36.303Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
