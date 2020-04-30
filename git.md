@@ -176,3 +176,13 @@ git push -u origin master  # 推送
 
 gitflow流程
 ![gitflow](img/gitflow.png)
+
+# GitHub组织
+创建组织
+并在组织中创建仓库
+
+# 版本管理
+使用tag进行版本管理，在commit之后使用tag命令给此次提交打标签，标记为一个正式版本
+
+1. `git tag -a 版本名 -m "备注信息"`：打标记
+2. `git push origin --tags`：推送到远程仓库，之后再releases会有发布版本
