@@ -191,4 +191,94 @@ gitflow流程
 github的review：
 在仓库设置中，branchs中选择一个分支，并为当前分支添加规则，勾选合并前拉取审阅请求。成员代码提交完毕之后，可以发起合并请求
 
-成员在new null request中选择合并分支提交给审核者，审核者会收到pull request的请求，可以在网站上上查看，完成后可以直接merge，也可以拉取到本地查看，之后再推送上
+成员在new null request中选择合并分支提交给审核者(可以指定)，审核者会收到pull request的请求，可以在网站上上查看，完成后可以直接merge，也可以拉取到本地查看，之后再推送上
+
+# 给开源项目贡献代码
+1. fork源代码，将项目拷贝到自己的仓库中
+2. 在自己的仓库修bug或二次开发
+3. 在自己仓库中给源代码的作者提交修复bug的申请（pull request）
+
+# 补充
+
+## 配置
+
+项目配置文件：`项目/.git/config`。只在当前项目生效。优先级最高
+```
+git config --local user.name 'xxx'
+git config --local user.emall 'xx@xx.com'
+```
+全局配置文件：`~/.gitconfig`。对全局生效
+```
+git config --global user.name 'xxx'
+git config --global user.emall 'xx@xx.com'
+```
+系统配置文件：`/etc/.gitconfig`。需要root权限
+```
+git config --system user.name 'xxx'
+git config --system user.emall 'xx@xx.com'
+```
+应用场景：
+1. 用户配置
+2. 配置插件：如mergetool
+3. remote 仓库地址。默认添加在本地配置文件中（--local）
+
+## 免密登陆
+以前版本的git每次push都需要输入密码
+
+实现免密登陆：
++ url中体现
+    ```
+    原来的地址：https://仓库地址URL
+    修改的地址：https://用户名:密码@仓库地址URL
+    git remote add origin https://用户名:密码@github.com/tinistyle/tools.git
+    ```
++ 通过ssh实现
+    1. 生成公钥和私钥：`ssh-keygen`。默认放在`~/.ssh`目录下，id_rsa.pub是公钥，is_rsa私钥
+    2. 拷贝公钥内容，并设置到远程仓库中
+    3. 在Git本地中配置ssh地址：`git remote add origin git@xxxxxx`
++ git自动管理凭证（现在才有）
+
+## git 忽略文件
+在项目文件夹中创建`.gitignore`文件，在文件中天上需要忽略的文件名
+```
+a.h
+!b.h  # 除了这个文件以外都忽略
+*.h  # 忽略.h类型的文件
+.gitignore  # 忽略文件本身
+dir/  # 忽略dir文件夹
+*.py[c|b|d]  # 忽略.py文件以及.pyc/.pyb/.pyd类型的文件
+```
+更多参考：https://github.com/github/gitignore。提供了很多语言的忽略文件类型
+
+## 任务管理
+
+issues：文档或任务管理，提问讨论等（code旁边），可以将问题指派具体人，可以为问题打标签
+
+wiki：类似百科的文档，项目的说明
+
+## 补充命令
+```
+git diff filename  # 查看文件相对于暂存区改动了哪些内容，add提交之后就看不到
+git diff --cached filename  # 暂存区文件与本地仓库文件对比
+
+git rm --cached filename  # 将文件从暂存区移回工作目录，变回未跟踪状态
+git rm filename  # 同时从本地目录和暂存区删除文件  -f 不提示
+
+git log --oneline  # 简写查看所有commit
+git log --oneline --decorate  # 查看所有分支的信息
+git log -p  # 详情查看，包括内容的变动
+git log -n  # n表示一个数字，查看最近的几条提交信息
+
+git checkout -- filename  # 用暂存区的文件覆盖本地文件，本地文件和暂存区一样，本地仓库不变
+git reset HEAD filename  # 用本地仓库的文件覆盖暂存区文件，本地仓库与暂存区一样，本地文件不变
+git reset --hard commitID  # 回退到某一次的commit
+
+git reflog  # 所有的commit的历史记录
+
+git tag  # 查看标签
+git tag -a v1.0  # 给最后一次的commit打标签，需要输入备注信息
+git tag -a v2.0 commitID  # 给某一次的commit打标签
+git show 标签名  # 查看当前标签对应的commit的内容
+git reset --hard 标签名  # 回退到某次的commit
+git tag -d 标签名  # 删除标签
+```
