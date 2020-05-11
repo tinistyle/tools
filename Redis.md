@@ -191,7 +191,7 @@ r.sscan_iter(name, match=None, count=None)：同hash的scan_iter相同操作，�
 有序集合，在集合的基础上，为每个元素排序，元素的排序需要根据另外一个值来进行比较，所以，对于有序集合，每一个元素有两个值，即：值和分数，分数专门用来做排序。
 ```
 r.zadd(name,{v1:1,v2:2,v3:3,}):创建有序集合，传入类似hash的数据，前面为值，对应的为分数（原生语法为分数在前，值在后）
-r.zscan(name):查看内容(原生语法中没有)
+r.zscan(name):查看内容(原生语法中没有)，返回一个元祖，第一个表示游标，第二个元素是内容
 
 r.zcard(name):统计元素个数
 
@@ -222,9 +222,106 @@ r.zunionstore(newname, (name1,name2), aggregate=None):获取两个有序集合�
 ```
 
 ### 其他常用操作
+```
+r.keys():查看redis中所有的name
+    # KEYS * 匹配数据库中所有 key 。
+    # KEYS h?llo 匹配 hello ， hallo 和 hxllo 等。
+    # KEYS h*llo 匹配 hllo 和 heeeeello 等。
+    # KEYS h[ae]llo 匹配 hello 和 hallo ，但不匹配 hillo
 
+r.delete(*names):删除某个name
+
+r.exists(name):判断某个name是否存在
+
+r.expire(name,time):给某个name设置过期时间，单位为秒
+
+r.rename(name,newname):为某个name重命名
+
+r.randomkey():获取一个随机的name，不删除
+
+r.type(name)：获取某个name的类型
+
+r.scan(cursor=0):查看所有键（cursor默认为0，查看所有）
+r.scan_iter(match=None, count=None):查看键的生成器，用法同前面的生成器
+```
+
+### 使用场景
+```
+(一)String
+
+这个其实没啥好说的，最常规的set/get操作，value可以是String也可以是数字。一般做一些复杂的计数功能的缓存，比如减少库存。
+
+
+(二)hash
+
+
+这里value存放的是结构化的对象，比较方便的就是操作其中的某个字段。博主在做单点登录的时候，就是用这种数据结构存储用户信息，以cookieId作为key，设置30分钟为缓存过期时间，能很好的模拟出类似session的效果。
+
+
+(三)list
+
+
+使用List的数据结构，可以做简单的消息队列的功能。另外还有一个就是，可以利用lrange命令，做基于redis的分页功能，性能极佳，用户体验好。本人还用一个场景，很合适---取行情信息。就也是个生产者和消费者的场景。LIST可以很好的完成排队，先进先出的原则。
+
+
+(四)set
+
+
+因为set堆放的是一堆不重复值的集合。所以可以做全局去重的功能。
+
+另外，就是利用交集、并集、差集等操作，可以计算共同喜好，全部的喜好，自己独有的喜好等功能。
+
+
+(五)sorted set
+
+
+sorted set多了一个权重参数score,集合中的元素能够按score进行排列。可以做排行榜应用，取TOP N操作。
+```
 
 
 ## 管道
 
+redis-py默认在执行每次请求都会创建（连接池申请连接）和断开（归还连接池）一次连接操作，如果想要在一次请求中指定多个命令，则可以使用pipline实现一次请求指定多个命令，并且默认情况下一次pipline 是原子性操作。类似于mysql中的事务，要么一起成功要么一起失败
+
+```python
+import redis
+  
+pool = redis.ConnectionPool(host='10.211.55.4', port=6379)
+r = redis.Redis(connection_pool=pool)
+# pipe = r.pipeline(transaction=False)
+pipe = r.pipeline(transaction=True)  # 设置一个管道（事务）
+  
+pipe.set('name', 'alex')  # 通过管道执行操作
+xxx # 报错之后前面的也不会执行
+pipe.set('role', 'sb')
+  
+pipe.execute()  # 执行管道
+```
+
 ## 发布订阅
+
+多个订阅者可以监听redis中的一个name，发布者通过给name设置set值，每个订阅者会收到消息
+
+发布订阅的特性用来做一个简单的实时聊天系统再适合不过了，当然这样的东西开发中很少涉及到。再比如在分布式架构中，常常会遇到读写分离的场景，在写入的过程中，就可以使用redis发布订阅，使得写入值及时发布到各个读的程序中，就保证数据的完整一致性。再比如，在一个博客网站中，有100个粉丝订阅了你，当你发布新文章，就可以推送消息给粉丝们拉。
+
+实现：
+```python
+# 订阅者：
+import redis
+
+r = redis.Redis(host='127.0.0.1')
+
+pub = r.pubsub()  # 生成发布订阅对象
+
+pub.subscribe('name')  # 监听redis的某个name
+pub.parse_response()  # 开启监听
+
+while 1:  # 持续监听
+    msg = pub.parse_response()
+    print(msg)
+
+# 发布者：
+import redis
+r = redis.Redis(host='127.0.0.1')
+r.publish('name','content')  # 通过name键发布消息
+```

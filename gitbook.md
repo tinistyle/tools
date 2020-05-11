@@ -13,11 +13,14 @@ gitbook使用：
 
 例：![这是一张图片](https://hbimg.huabanimg.com/ba237434c71679d5c4cfe5688578a14ad8e76095265e7-TfULRk)
 
-可以使用html标签限制宽高:
+可以使用html标签限制宽高:`<img src="https://hbimg.huabanimg.com/ba237434c71679d5c4cfe5688578a14ad8e76095265e7-TfULRk" height="200">`
 <img src="https://hbimg.huabanimg.com/ba237434c71679d5c4cfe5688578a14ad8e76095265e7-TfULRk" height="200">
 
 ### 插入视频
 html方式：
+```
+<iframe width="600" height="100%" src="//player.bilibili.com/player.html?aid=26457728&bvid=BV1As411W7h3&cid=45474759&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+```
 <iframe width="600" height="100%" src="//player.bilibili.com/player.html?aid=26457728&bvid=BV1As411W7h3&cid=45474759&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 

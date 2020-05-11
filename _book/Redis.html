@@ -1,0 +1,589 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redis · 各种小工具使用教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tinistyle">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="RabbitMQ.html" />
+    
+    
+    <link rel="prev" href="gitlab.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gitbook.html">
+            
+                <a href="gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="gitlab.html">
+            
+                <a href="gitlab.html">
+            
+                    
+                    gitlab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="Redis.html">
+            
+                <a href="Redis.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="RabbitMQ.html">
+            
+                <a href="RabbitMQ.html">
+            
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Redis</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redis-&#x7B80;&#x4ECB;">Redis &#x7B80;&#x4ECB;</h1>
+<p>Redis &#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x6027;&#x80FD;&#x7684;key-value&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7684;&#x5185;&#x5B58;&#x7F13;&#x5B58;&#xFF0C;NoSQL&#x6570;&#x636E;&#x5E93;&#x3002;NOSQL&#xFF1A;not only sql&#xFF0C;&#x6CDB;&#x6307;&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x3002;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;: (mysql, oracle, sql server, sqlite)</p>
+<pre><code>1. &#x6570;&#x636E;&#x5B58;&#x653E;&#x5728;&#x8868;&#x4E2D;&#xFF0C;&#x8868;&#x4E4B;&#x95F4;&#x6709;&#x5173;&#x7CFB;&#x3002;
+2. &#x901A;&#x7528;&#x7684;SQL&#x64CD;&#x4F5C;&#x8BED;&#x8A00;&#x3002;
+3. &#x5927;&#x90E8;&#x5206;&#x652F;&#x6301;&#x4E8B;&#x52A1;&#x3002;
+</code></pre><p>&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;[ redis&#xFF0C;hadoop&#xFF0C;mangoDB]:</p>
+<pre><code>1. &#x6CA1;&#x6709;&#x6570;&#x636E;&#x8868;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4E0D;&#x540C;&#x7684;nosql&#x6570;&#x636E;&#x5E93;&#x5B58;&#x653E;&#x6570;&#x636E;&#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#x3002;
+2. nosql&#x6570;&#x636E;&#x5E93;&#x6CA1;&#x6709;&#x901A;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x8BED;&#x8A00;&#x3002;
+3. &#x57FA;&#x672C;&#x4E0D;&#x652F;&#x6301;&#x4E8B;&#x52A1;&#x3002;   redis&#x652F;&#x6301;&#x7B80;&#x5355;&#x4E8B;&#x52A1;
+</code></pre><p>redis&#x662F;&#x4E1A;&#x754C;&#x4E3B;&#x6D41;&#x7684;key-value nosql &#x6570;&#x636E;&#x5E93;&#x4E4B;&#x4E00;&#x3002;&#x548C;Memcached&#x7C7B;&#x4F3C;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x5B58;&#x50A8;&#x7684;value&#x7C7B;&#x578B;&#x76F8;&#x5BF9;&#x66F4;&#x591A;&#xFF0C;&#x5305;&#x62EC;string(&#x5B57;&#x7B26;&#x4E32;)&#x3001;list(&#x94FE;&#x8868;)&#x3001;set(&#x96C6;&#x5408;)&#x3001;zset(sorted set --&#x6709;&#x5E8F;&#x96C6;&#x5408;)&#x548C;hash&#xFF08;&#x54C8;&#x5E0C;&#x7C7B;&#x578B;&#xFF09;&#x3002;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x652F;&#x6301;push/pop&#x3001;add/remove&#x53CA;&#x53D6;&#x4EA4;&#x96C6;&#x5E76;&#x96C6;&#x548C;&#x5DEE;&#x96C6;&#x53CA;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#x3002;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;redis&#x652F;&#x6301;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x65B9;&#x5F0F;&#x7684;&#x6392;&#x5E8F;&#x3002;&#x4E0E;memcached&#x4E00;&#x6837;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6548;&#x7387;&#xFF0C;&#x6570;&#x636E;&#x90FD;&#x662F;&#x7F13;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x3002;&#x533A;&#x522B;&#x7684;&#x662F;redis&#x4F1A;&#x5468;&#x671F;&#x6027;&#x7684;&#x628A;&#x66F4;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;&#x78C1;&#x76D8;&#x6216;&#x8005;&#x628A;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x5199;&#x5165;&#x8FFD;&#x52A0;&#x7684;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;master-slave(&#x4E3B;&#x4ECE;)&#x540C;&#x6B65;&#x3002;redis&#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E;CS&#x67B6;&#x6784;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;redis&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x4E5F;&#x6709;&#x670D;&#x52A1;&#x7AEF;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;python&#x7B49;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;</p>
+<h2 id="&#x4F18;&#x70B9;">&#x4F18;&#x70B9;</h2>
+<ul>
+<li>&#x5F02;&#x5E38;&#x5FEB;&#x901F; : Redis&#x662F;&#x975E;&#x5E38;&#x5FEB;&#x7684;&#xFF0C;&#x6BCF;&#x79D2;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x5927;&#x7EA6;110000&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#xFF0C;81000&#x4E2A;/&#x6BCF;&#x79D2;&#x7684;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x4E30;&#x5BCC;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B; : Redis&#x652F;&#x6301;&#x6700;&#x5927;&#x591A;&#x6570;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x5982;&#x5217;&#x8868;&#xFF0C;&#x96C6;&#x5408;&#xFF0C;&#x53EF;&#x6392;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x54C8;&#x5E0C;&#x7B49;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</li>
+<li>&#x539F;&#x5B50; &#x2013; Redis&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#xFF0C;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8981;&#x4E48;&#x6210;&#x529F;&#x6267;&#x884C;&#x8981;&#x4E48;&#x5931;&#x8D25;&#x5B8C;&#x5168;&#x4E0D;&#x6267;&#x884C;&#x3002;&#x5355;&#x4E2A;&#x64CD;&#x4F5C;&#x662F;&#x539F;&#x5B50;&#x6027;&#x7684;&#x3002;&#x591A;&#x4E2A;&#x64CD;&#x4F5C;&#x4E5F;&#x652F;&#x6301;&#x4E8B;&#x52A1;&#xFF0C;&#x5373;&#x539F;&#x5B50;&#x6027;&#xFF0C;&#x901A;&#x8FC7;MULTI&#x548C;EXEC&#x6307;&#x4EE4;&#x5305;&#x8D77;&#x6765;&#x3002;</li>
+<li>Redis&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x529F;&#x80FD;&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5F88;&#x591A;&#x5982;&#xFF0C;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x961F;&#x5217;&#x4E2D;&#x4F7F;&#x7528;&#xFF08;Redis&#x539F;&#x751F;&#x652F;&#x6301;&#x53D1;&#x5E03;/&#x8BA2;&#x9605;&#xFF09;</li>
+<li>&#x5355;&#x7EBF;&#x7A0B;&#x7279;&#x6027;&#xFF0C;&#x79D2;&#x6740;&#x7CFB;&#x7EDF;&#xFF0C;&#x57FA;&#x4E8E;redis&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x7279;&#x5F81;&#xFF0C;&#x9632;&#x6B62;&#x51FA;&#x73B0;&#x6570;&#x636E;&#x5E93;&#x201C;&#x7206;&#x7834;&#x201D;</li>
+</ul>
+<h2 id="&#x5E94;&#x7528;">&#x5E94;&#x7528;</h2>
+<ul>
+<li>&#x6027;&#x80FD;&#xFF1A;Redis &#x4E2D;&#x7F13;&#x5B58;&#x70ED;&#x70B9;&#x6570;&#x636E;&#xFF0C;&#x80FD;&#x591F;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x63D0;&#x9AD8;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x78B0;&#x5230;&#x9700;&#x8981;&#x6267;&#x884C;&#x8017;&#x65F6;&#x7279;&#x522B;&#x4E45;&#xFF0C;&#x4E14;&#x7ED3;&#x679C;&#x4E0D;&#x9891;&#x7E41;&#x53D8;&#x52A8;&#x7684;SQL&#xFF0C;&#x5C31;&#x7279;&#x522B;&#x9002;&#x5408;&#x5C06;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x653E;&#x5165;&#x7F13;&#x5B58;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x8BF7;&#x6C42;&#x5C31;&#x53BB;&#x7F13;&#x5B58;&#x4E2D;&#x8BFB;&#x53D6;&#xFF0C;&#x4F7F;&#x5F97;&#x8BF7;&#x6C42;&#x80FD;&#x591F;&#x8FC5;&#x901F;&#x54CD;&#x5E94;&#x3002;
+  <img src="img/redis01.png" alt="redis01"></li>
+<li>&#x5E76;&#x53D1;&#xFF1A;&#x8FD8;&#x662F;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5728;&#x5927;&#x5E76;&#x53D1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x51FA;&#x73B0;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;redis&#x505A;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x64CD;&#x4F5C;&#xFF0C;&#x8BA9;&#x8BF7;&#x6C42;&#x5148;&#x8BBF;&#x95EE;&#x5230;redis&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
+<p>centos&#xFF1A;</p>
+<ol>
+<li>&#x5B89;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x6E90;&#xFF1A;yum install epel-release</li>
+<li>&#x5B89;&#x88C5;redis&#xFF1A;yum install redis</li>
+<li>&#x542F;&#x52A8;&#xFF1A;service redis start &#x6216;  redis-server</li>
+<li>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;vim /etc/redis.conf<ul>
+<li>&#x6CE8;&#x91CA;&#x6389;ip&#x7ED1;&#x5B9A;(&#x8FD9;&#x4E2A;&#x53EA;&#x5141;&#x8BB8;&#x672C;&#x5730;&#x8C03;&#x8BD5;,&#x4E0D;&#x6CE8;&#x91CA;&#x6389;&#x8FD9;&#x4E2A;,&#x4F60;&#x8FDC;&#x7A0B;&#x8FD9;&#x4E2A;redis&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x63D0;&#x793A;:redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect)&#xFF1A;# bind 127.0.0.1</li>
+<li>&#x5173;&#x95ED;&#x4FDD;&#x62A4;&#x6A21;&#x5F0F;(&#x4E0D;&#x5173;&#x95ED;&#x7684;&#x8BDD;&#x8FDC;&#x7A0B;&#x8FD9;&#x4E2A;redis&#x4F1A;&#x63D0;&#x793A;:redis.clients.jedis.exceptionsJedisDataException: DENIED Redis is running in protected mode)&#xFF1A;protected-mode no</li>
+</ul>
+</li>
+<li>&#x67E5;&#x770B;redis&#x662F;&#x5426;&#x8FD0;&#x884C;&#xFF1A;redis-cli&#x3002;&#x4F1A;&#x6253;&#x5F00;&#x63D0;&#x793A;&#x7B26;&#xFF0C;&#x8F93;&#x5165;ping&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;pong&#x5C31;&#x5B89;&#x88C5;&#x6210;&#x529F;</li>
+</ol>
+<p>Windows&#xFF1A;<a href="https://github.com/MicrosoftArchive/redis/tags" target="_blank">https://github.com/MicrosoftArchive/redis/tags</a></p>
+<h1 id="python&#x64CD;&#x4F5C;redis">python&#x64CD;&#x4F5C;redis</h1>
+<p>redis-py&#x63D0;&#x4F9B;&#x4E24;&#x4E2A;&#x7C7B;Redis&#x548C;StrictRedis&#x7528;&#x4E8E;&#x5B9E;&#x73B0;Redis&#x7684;&#x547D;&#x4EE4;&#xFF0C;StrictRedis&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x5927;&#x90E8;&#x5206;&#x5B98;&#x65B9;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x547D;&#x4EE4;&#xFF0C;Redis&#x662F;StrictRedis&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x65E7;&#x7248;&#x672C;&#x7684;redis-py&#x3002;</p>
+<h2 id="&#x8FDE;&#x63A5;redis">&#x8FDE;&#x63A5;redis</h2>
+<ol>
+<li>pip install redis &#xFF1A;&#x5B89;&#x88C5;&#x6A21;&#x5757;</li>
+<li>import redis&#xFF1A;&#x5BFC;&#x5165;&#x6A21;&#x5757;</li>
+<li>&#x8FDE;&#x63A5;&#xFF1A;<ul>
+<li>&#x57FA;&#x672C;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#xFF1A;r = redis.Redis(host=&apos;redis&#x5730;&#x5740;&apos;, port=6379) &#xFF1A;&#x8FDE;&#x63A5;redis&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;redis&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;</li>
+<li>&#x57FA;&#x4E8E;&#x8FDE;&#x63A5;&#x6C60;&#x8FDE;&#x63A5;&#xFF1A;&#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x6C60;&#x4FDD;&#x6301;&#x8FDE;&#x63A5;&#xFF0C;&#x6548;&#x7387;&#x9AD8;&#xFF0C;&#x4E0D;&#x7528;&#x6BCF;&#x6B21;&#x64CD;&#x4F5C;&#x90FD;&#x8981;&#x65AD;&#x5F00;&#x518D;&#x8FDE;&#x63A5;<pre><code>  pool = redis.ConnectionPool(host=&apos;10.211.55.4&apos;, port=6379)  # &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x6C60;
+  r = redis.Redis(connection_pool=pool)  # &#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x6C60;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C;</h2>
+<p>redis&#x952E;&#x503C;&#x5BF9;&#x7684;&#x503C;&#x7684;&#x7C7B;&#x578B;&#xFF1A;</p>
+<ol>
+<li>string&#x7C7B;&#x578B;&#xFF1A;&#x57FA;&#x7840;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#xFF08;byte&#x7C7B;&#x578B;&#xFF09;&#x3002;&#x6700;&#x5927;&#x5BB9;&#x91CF;512M</li>
+<li>hash&#x7C7B;&#x578B;&#xFF1A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;python&#x5B57;&#x5178;&#xFF0C;&#x503C;&#x53EA;&#x80FD;&#x662F;string&#xFF1A;<code>name:{&#x952E;:&#x503C;,&#x952E;:&#x503C;....}</code></li>
+<li>list&#x7C7B;&#x578B;&#xFF1A;&#x7C7B;&#x4F3C;&#x4E8E;python&#x5217;&#x8868;&#xFF1A;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A;string</li>
+<li>set&#x7C7B;&#x578B;&#xFF1A;&#x65E0;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x5143;&#x7D20;&#x4E3A;string&#xFF0C;&#x552F;&#x4E00;&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;</li>
+<li>zset&#x7C7B;&#x578B;&#xFF1A;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x5143;&#x7D20;&#x4E3A;string&#xFF0C;&#x552F;&#x4E00;&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;</li>
+</ol>
+<h3 id="string&#x64CD;&#x4F5C;">String&#x64CD;&#x4F5C;</h3>
+<p>&#x952E;&#x503C;&#x5BF9;&#x90FD;&#x5FC5;&#x987B;&#x662F;string&#x7C7B;&#x578B;</p>
+<pre><code>r.set(&quot;name&quot;,&quot;value&quot;,ex=None,px=None,nx=False,xx=False)  &#xFF1A;&#x8BBE;&#x7F6E;&#x952E;&#x503C;&#x5BF9;
+    # &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF1A;
+    ex=&#x8FC7;&#x671F;&#x65F6;&#x95F4;(&#x79D2;)(&#x9ED8;&#x8BA4;)&#xFF1B;
+    px=&#x8FC7;&#x671F;&#x65F6;&#x95F4;(&#x6BEB;&#x79D2;)&#xFF1B;
+    nx=True/False&#xFF1A;&#x5982;&#x679C;&#x4E3A;true&#x8868;&#x793A;&#x53EA;&#x6709;name&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#x624D;&#x8FDB;&#x884C;set&#x64CD;&#x4F5C;(&#x9632;&#x6B62;&#x8986;&#x76D6;)&#xFF1B;
+    xx=True/False:&#x4E0E;nx&#x76F8;&#x53CD;
+r.setnx(name,value)&#xFF1A;&#x8BBE;&#x7F6E;&#x503C;&#xFF0C;&#x53EA;&#x6709;name&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x6267;&#x884C;&#x64CD;&#x4F5C;
+r.setex(name,value,time)&#xFF1A;time&#x8868;&#x793A;&#x8FC7;&#x671F;&#x65F6;&#x95F4;(&#x79D2;)
+r.psetex(name,time_ms,value)&#xFF1A;&#x8FC7;&#x671F;&#x65F6;&#x95F4;(&#x6BEB;&#x79D2;)
+
+r.mset(*args, **kwargs)&#xFF1A;&#x6279;&#x91CF;&#x8BBE;&#x7F6E;&#x503C;
+    &#x5982;&#xFF1A;r.mset(k1=&quot;v1&quot;,k2=&quot;v2&quot;)
+    &#x6216;&#xFF1A;r.mset({&apos;k1&apos;:&apos;v1&apos;, &apos;k2&apos;:&apos;v2&apos;})
+
+r.get(&quot;name&quot;)&#xFF1A;&#x53D6;&#x503C;
+r.mget([&quot;name1&quot;,&quot;name2&quot;])&#xFF1A;&#x6279;&#x91CF;&#x53D6;&#x503C;
+
+r.getset(name,value)&#xFF1A;&#x7ED9;name&#x8BBE;&#x7F6E;&#x65B0;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x539F;&#x6765;&#x7684;&#x503C;
+
+r.getrange(name,start,end)&#xFF1A;&#x83B7;&#x53D6;name&#x7684;&#x503C;&#x5B50;&#x5E8F;&#x5217;&#xFF08;&#x6839;&#x636E;&#x5B57;&#x8282;&#x83B7;&#x53D6;&#xFF0C;&#x975E;&#x5B57;&#x7B26;&#xFF09;&#x3002;&#x76F8;&#x5F53;&#x4E8E;&#x5207;&#x7247;
+r.setrange(name,offset,value)&#xFF1A;&#x4FEE;&#x6539;&#x503C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4ECE;&#x6307;&#x5B9A;&#x7D22;&#x5F15;(offset)&#x5F00;&#x59CB;&#x5411;&#x540E;&#x66FF;&#x6362;&#xFF0C;&#x8D85;&#x51FA;&#x5219;&#x6DFB;&#x52A0;&#x5728;&#x540E;&#x9762;&#xFF0C;value&#x8868;&#x793A;&#x66FF;&#x6362;&#x7684;&#x503C;
+
+r.strlen(name):&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x503C;&#x7684;&#x957F;&#x5EA6;
+
+r.incr(name,&#x6570;&#x5B57;)&#xFF1A;name&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x81EA;&#x589E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1
+r.incrbyfloat(name,&#x6D6E;&#x70B9;&#x6570;)&#xFF1A;&#x81EA;&#x589E;&#x53EF;&#x4EE5;&#x662F;&#x6D6E;&#x70B9;&#x6570;
+r.decr(name,&#x6570;&#x5B57;)&#xFF1A;&#x81EA;&#x51CF;
+
+r.append(name,value):&#x7ED9;name&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x8FFD;&#x52A0;&#x5185;&#x5BB9;
+</code></pre><h3 id="hash&#x64CD;&#x4F5C;">hash&#x64CD;&#x4F5C;</h3>
+<p>&#x503C;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E;python&#x7684;dict&#x7684;&#x7C7B;&#x578B;</p>
+<pre><code>r.hset(name,key,value):&#x521B;&#x5EFA;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;name&#x4E3A;redis&#x7684;name&#xFF0C;key&#x4E3A;hash&#x7684;key&#xFF0C;value&#x4E3A;hash&#x7684;value
+r.hget(name,key):&#x83B7;&#x53D6;name&#x4E0B;&#x7684;&#x4E00;&#x4E2A;key&#x7684;&#x503C;
+
+r.hmset(name,{k1:1,k2:v2}):&#x6279;&#x91CF;&#x8BBE;&#x7F6E;
+r.hgetall(name):&#x83B7;&#x53D6;name&#x4E0B;&#x7684;&#x5168;&#x90E8;&#x503C;
+r.hmget(name,[k1,k2...]):&#x53D6;&#x591A;&#x4E2A;&#x503C;
+
+r.hlen(name):&#x83B7;&#x53D6;&#x5BF9;&#x5E94;name&#x7684;&#x957F;&#x5EA6;(&#x5143;&#x7D20;&#x4E2A;&#x6570;)
+
+r.hkeys(name)&#xFF1A;&#x83B7;&#x53D6;name&#x4E0B;&#x6240;&#x6709;&#x7684;key
+r.hvals(name):&#x83B7;&#x53D6;name&#x4E0B;&#x6240;&#x6709;&#x7684;value
+
+r.hexists(name,key):&#x5224;&#x65AD;name&#x4E0B;&#x67D0;&#x4E2A;key&#x5B58;&#x4E0D;&#x5B58;&#x5728;
+
+r.hdel(name,key):&#x5220;&#x9664;name&#x4E0B;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;
+
+r.hincrby(name, key, amount=1):&#x5BF9;&#x5E94;&#x7684;&#x5982;&#x679C;&#x662F;&#x6570;&#x5B57;&#x5C31;&#x81EA;&#x589E;
+r.hincrbyfloat(name, key, &#x6D6E;&#x70B9;&#x6570;)&#xFF1A;&#x81EA;&#x589E;&#x6B65;&#x6570;&#x4E3A;&#x6D6E;&#x70B9;&#x6570;
+
+r.hscan_iter(name,match=None,count=None):&#x5229;&#x7528;yield&#x5C01;&#x88C5;hscan&#x521B;&#x5EFA;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5B9E;&#x73B0;&#x5206;&#x6279;&#x53BB;redis&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;
+    # &#x53C2;&#x6570;&#xFF1A;
+    # match&#xFF0C;&#x5339;&#x914D;&#x6307;&#x5B9A;key&#xFF0C;&#x9ED8;&#x8BA4;None &#x8868;&#x793A;&#x6240;&#x6709;&#x7684;key
+    # count&#xFF0C;&#x6BCF;&#x6B21;&#x5206;&#x7247;&#x6700;&#x5C11;&#x83B7;&#x53D6;&#x4E2A;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;None&#x8868;&#x793A;&#x91C7;&#x7528;Redis&#x7684;&#x9ED8;&#x8BA4;&#x5206;&#x7247;&#x4E2A;&#x6570;
+    # &#x5982;&#xFF1A;
+        # for item in r.hscan_iter(&apos;xx&apos;):
+        #     print item
+</code></pre><h3 id="list&#x64CD;&#x4F5C;">list&#x64CD;&#x4F5C;</h3>
+<p>&#x6BCF;&#x4E2A;name&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x94FE;&#x8868;(&#x7C7B;&#x4F3C;python&#x5217;&#x8868;)</p>
+<pre><code>r.lpush(name,v1,v2....):&#x521B;&#x5EFA;&#x4E00;&#x6761;&#x6570;&#x636E;,&#x6309;&#x8F93;&#x5165;&#x76F8;&#x53CD;&#x987A;&#x5E8F;&#x5B58;&#x50A8;
+r.rpush(name,v1,v2....):&#x521B;&#x5EFA;&#x4E00;&#x6761;&#x6570;&#x636E;,&#x6309;&#x8F93;&#x5165;&#x987A;&#x5E8F;&#x5B58;&#x50A8;
+
+r.lrange(name,star,end):&#x5217;&#x8868;&#x53D6;&#x503C;&#xFF0C;star&#x548C;end&#x8868;&#x793A;&#x7D22;&#x5F15;&#xFF0C;&#x7C7B;&#x4F3C;&#x5207;&#x7247;
+
+r.lpushx(name,value)&#xFF1A;&#x7ED9;name&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF0C;&#x6DFB;&#x52A0;&#x5230;list&#x7684;&#x5DE6;&#x8FB9;&#xFF0C;&#x53EA;&#x6709;name&#x5B58;&#x624D;&#x624D;&#x4F1A;&#x52A0;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x65E0;&#x6548;
+r.rpushx(name,value): &#x7ED9;name&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF0C;&#x6DFB;&#x52A0;&#x5230;list&#x7684;&#x53F3;&#x8FB9;
+
+r.llen(name):&#x8FD4;&#x56DE;name&#x5BF9;&#x7528;&#x7684;list&#x957F;&#x5EA6;
+
+r.linsert(name,where,refvalue,value):&#x63D2;&#x5165;&#x503C;
+    # name&#xFF0C;redis&#x7684;name
+    # where&#xFF0C;BEFORE&#x6216;AFTER
+    # refvalue&#xFF0C;&#x6807;&#x6746;&#x503C;&#xFF0C;&#x5373;&#xFF1A;&#x5728;&#x5B83;&#x524D;&#x540E;&#x63D2;&#x5165;&#x6570;&#x636E;
+    # value&#xFF0C;&#x8981;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;
+
+r.lset(name,index,value):&#x4FEE;&#x6539;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;
+
+r.lrem(name,value,count):&#x5220;&#x9664;&#x6307;&#x5B9A;&#x503C;&#x540E;&#x9762;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x503C;
+    # count=0 &#x8868;&#x793A;&#x5220;&#x9664;&#x5168;&#x90E8;
+    # count = &#x6570;&#x5B57; &#x8868;&#x793A;&#x5220;&#x9664;&#x591A;&#x5C11;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x5220;&#x9664;
+    # count = &#x8D1F;&#x6570; &#x8868;&#x793A;&#x4ECE;&#x53F3;&#x5411;&#x5DE6;&#x5220;&#x9664;
+
+r.lpop(name):&#x4ECE;&#x5DE6;&#x5411;&#x53F3;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x503C;
+r.rpop(name):&#x4ECE;&#x53F3;&#x5411;&#x5DE6;&#x5220;&#x9664;
+
+r.lindex(name,index):&#x6839;&#x636E;&#x7D22;&#x5F15;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x503C;
+
+r.ltrim(name,start,end):&#x79FB;&#x9664;&#x5728;&#x7D22;&#x5F15;star-end&#x4E4B;&#x5916;&#x7684;&#x5143;&#x7D20;
+</code></pre><h3 id="set&#x64CD;&#x4F5C;">set&#x64CD;&#x4F5C;</h3>
+<p>&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x7684;list</p>
+<pre><code>r.sadd(name,*values):&#x521B;&#x5EFA;&#x96C6;&#x5408;&#x6570;&#x636E;
+
+r.smembers(name):&#x67E5;&#x770B;name&#x7684;&#x6570;&#x636E;
+
+r.scard(name):&#x67E5;&#x770B;set&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+
+r.sinter(name1,name2,...):&#x4EA4;&#x96C6;
+r.sunion(name1,name2...):&#x5E76;&#x96C6;
+r.sdiff(name1,name2...):&#x5DEE;&#x96C6;&#xFF0C;&#x53EA;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x6709;&#x7684;&#x5143;&#x7D20;
+
+r.sismember(name,value):&#x5224;&#x65AD;value&#x662F;&#x5426;&#x5728;name&#x4E2D;
+
+r.spop(name):&#x968F;&#x673A;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E76;&#x8FD4;&#x56DE;
+
+r.srandmember(name,count):&#x4ECE;name&#x4E2D;&#x968F;&#x673A;&#x53D6;count&#x4E2A;&#x6570;&#x636E;
+
+r.srem(name,v1,v2...):&#x5220;&#x9664;&#x67D0;&#x4E9B;&#x503C;
+
+r.sscan_iter(name, match=None, count=None)&#xFF1A;&#x540C;hash&#x7684;scan_iter&#x76F8;&#x540C;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x589E;&#x91CF;&#x8FED;&#x4EE3;&#x5206;&#x6279;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#xFF0C;&#x907F;&#x514D;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x592A;&#x5927;
+</code></pre><h3 id="sort-set&#x64CD;&#x4F5C;">sort set&#x64CD;&#x4F5C;</h3>
+<p>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x5728;&#x96C6;&#x5408;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6392;&#x5E8F;&#xFF0C;&#x5143;&#x7D20;&#x7684;&#x6392;&#x5E8F;&#x9700;&#x8981;&#x6839;&#x636E;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x503C;&#x6765;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5BF9;&#x4E8E;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6709;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;&#x5373;&#xFF1A;&#x503C;&#x548C;&#x5206;&#x6570;&#xFF0C;&#x5206;&#x6570;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x505A;&#x6392;&#x5E8F;&#x3002;</p>
+<pre><code>r.zadd(name,{v1:1,v2:2,v3:3,}):&#x521B;&#x5EFA;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#xFF0C;&#x4F20;&#x5165;&#x7C7B;&#x4F3C;hash&#x7684;&#x6570;&#x636E;&#xFF0C;&#x524D;&#x9762;&#x4E3A;&#x503C;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x4E3A;&#x5206;&#x6570;&#xFF08;&#x539F;&#x751F;&#x8BED;&#x6CD5;&#x4E3A;&#x5206;&#x6570;&#x5728;&#x524D;&#xFF0C;&#x503C;&#x5728;&#x540E;&#xFF09;
+r.zscan(name):&#x67E5;&#x770B;&#x5185;&#x5BB9;(&#x539F;&#x751F;&#x8BED;&#x6CD5;&#x4E2D;&#x6CA1;&#x6709;)&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5143;&#x7956;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x6E38;&#x6807;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x5185;&#x5BB9;
+
+r.zcard(name):&#x7EDF;&#x8BA1;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+
+r.zcount(name,min,max):&#x83B7;&#x53D6;name&#x4E2D;&#x5143;&#x7D20;&#x5206;&#x6570;&#x5728;min-max&#x4E4B;&#x95F4;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+
+r.zincrby(name,value,amount):&#x5BF9;value&#x7684;&#x5206;&#x6570;&#x81EA;&#x589E;&#xFF0C;
+
+r.zrange(name,start,end,desc=False,withscores=True,score_cast_func=int):&#x6309;&#x7167;&#x7D22;&#x5F15;&#x8303;&#x56F4;&#x83B7;&#x53D6;name&#x5BF9;&#x5E94;&#x7684;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x5143;&#x7D20;
+    # name    redis&#x7684;name
+    start   &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7D22;&#x5F15;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;
+    end     &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7D22;&#x5F15;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;
+    desc    &#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x9ED8;&#x8BA4;&#x6309;&#x7167;&#x5206;&#x6570;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;
+    withscores  &#x662F;&#x5426;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x7684;&#x5206;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x53EA;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x7684;&#x503C;
+    score_cast_func &#x5BF9;&#x5206;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x7684;&#x51FD;&#x6570;
+
+r.zscore(name,value):&#x83B7;&#x53D6;value&#x7684;&#x5206;&#x6570;
+
+r.zrank(name,value):&#x83B7;&#x53D6;value&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6392;&#x884C;&#xFF0C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#xFF0C;&#x4ECE;0&#x5F00;&#x59CB;
+r.zrevrank(name,value):&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x53D6;&#x6392;&#x884C;
+
+r.zrem(name,values):&#x5220;&#x9664;name&#x7684;value,&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x7528;&#x5217;&#x8868;
+r.zremrangebyrank(name, min, max)&#xFF1A;&#x6839;&#x636E;&#x6392;&#x884C;&#x8303;&#x56F4;&#x5220;&#x9664;
+r.zremrangebyscore(name, min, max)&#xFF1A;&#x6839;&#x636E;&#x5206;&#x6570;&#x8303;&#x56F4;&#x5220;&#x9664;
+
+r.zinterstore(newname, (name1,name2), aggregate=None):&#x83B7;&#x53D6;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x4EA4;&#x96C6;,&#x5E76;&#x751F;&#x6210;newname&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x76F8;&#x540C;&#x503C;&#x4E0D;&#x540C;&#x5206;&#x6570;&#xFF0C;&#x5219;&#x6309;&#x7167;aggregate&#x8FDB;&#x884C;&#x64CD;&#x4F5C;,aggregate&#x7684;&#x503C;&#x4E3A;:  SUM(&#x9ED8;&#x8BA4;,&#x76F8;&#x52A0;&#x5206;&#x6570;)  MIN  MAX
+r.zunionstore(newname, (name1,name2), aggregate=None):&#x83B7;&#x53D6;&#x4E24;&#x4E2A;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7684;&#x5E76;&#x96C6;,&#x5E76;&#x751F;&#x6210;newname&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x76F8;&#x540C;&#x503C;&#x4E0D;&#x540C;&#x5206;&#x6570;&#xFF0C;&#x5219;&#x6309;&#x7167;aggregate&#x8FDB;&#x884C;&#x64CD;&#x4F5C;,aggregate&#x7684;&#x503C;&#x4E3A;:  SUM(&#x9ED8;&#x8BA4;,&#x76F8;&#x52A0;&#x5206;&#x6570;)  MIN  MAX
+</code></pre><h3 id="&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x64CD;&#x4F5C;">&#x5176;&#x4ED6;&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
+<pre><code>r.keys():&#x67E5;&#x770B;redis&#x4E2D;&#x6240;&#x6709;&#x7684;name
+    # KEYS * &#x5339;&#x914D;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6240;&#x6709; key &#x3002;
+    # KEYS h?llo &#x5339;&#x914D; hello &#xFF0C; hallo &#x548C; hxllo &#x7B49;&#x3002;
+    # KEYS h*llo &#x5339;&#x914D; hllo &#x548C; heeeeello &#x7B49;&#x3002;
+    # KEYS h[ae]llo &#x5339;&#x914D; hello &#x548C; hallo &#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D; hillo
+
+r.delete(*names):&#x5220;&#x9664;&#x67D0;&#x4E2A;name
+
+r.exists(name):&#x5224;&#x65AD;&#x67D0;&#x4E2A;name&#x662F;&#x5426;&#x5B58;&#x5728;
+
+r.expire(name,time):&#x7ED9;&#x67D0;&#x4E2A;name&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;
+
+r.rename(name,newname):&#x4E3A;&#x67D0;&#x4E2A;name&#x91CD;&#x547D;&#x540D;
+
+r.randomkey():&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684;name&#xFF0C;&#x4E0D;&#x5220;&#x9664;
+
+r.type(name)&#xFF1A;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;name&#x7684;&#x7C7B;&#x578B;
+
+r.scan(cursor=0):&#x67E5;&#x770B;&#x6240;&#x6709;&#x952E;&#xFF08;cursor&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x67E5;&#x770B;&#x6240;&#x6709;&#xFF09;
+r.scan_iter(match=None, count=None):&#x67E5;&#x770B;&#x952E;&#x7684;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x7528;&#x6CD5;&#x540C;&#x524D;&#x9762;&#x7684;&#x751F;&#x6210;&#x5668;
+</code></pre><h3 id="&#x4F7F;&#x7528;&#x573A;&#x666F;">&#x4F7F;&#x7528;&#x573A;&#x666F;</h3>
+<pre><code>(&#x4E00;)String
+
+&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x6CA1;&#x5565;&#x597D;&#x8BF4;&#x7684;&#xFF0C;&#x6700;&#x5E38;&#x89C4;&#x7684;set/get&#x64CD;&#x4F5C;&#xFF0C;value&#x53EF;&#x4EE5;&#x662F;String&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x5B57;&#x3002;&#x4E00;&#x822C;&#x505A;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x8BA1;&#x6570;&#x529F;&#x80FD;&#x7684;&#x7F13;&#x5B58;&#xFF0C;&#x6BD4;&#x5982;&#x51CF;&#x5C11;&#x5E93;&#x5B58;&#x3002;
+
+
+(&#x4E8C;)hash
+
+
+&#x8FD9;&#x91CC;value&#x5B58;&#x653E;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x7684;&#x5C31;&#x662F;&#x64CD;&#x4F5C;&#x5176;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x3002;&#x535A;&#x4E3B;&#x5728;&#x505A;&#x5355;&#x70B9;&#x767B;&#x5F55;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x662F;&#x7528;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;cookieId&#x4F5C;&#x4E3A;key&#xFF0C;&#x8BBE;&#x7F6E;30&#x5206;&#x949F;&#x4E3A;&#x7F13;&#x5B58;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF0C;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x6A21;&#x62DF;&#x51FA;&#x7C7B;&#x4F3C;session&#x7684;&#x6548;&#x679C;&#x3002;
+
+
+(&#x4E09;)list
+
+
+&#x4F7F;&#x7528;List&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x7B80;&#x5355;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x7684;&#x529F;&#x80FD;&#x3002;&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;lrange&#x547D;&#x4EE4;&#xFF0C;&#x505A;&#x57FA;&#x4E8E;redis&#x7684;&#x5206;&#x9875;&#x529F;&#x80FD;&#xFF0C;&#x6027;&#x80FD;&#x6781;&#x4F73;&#xFF0C;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x597D;&#x3002;&#x672C;&#x4EBA;&#x8FD8;&#x7528;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x5F88;&#x5408;&#x9002;---&#x53D6;&#x884C;&#x60C5;&#x4FE1;&#x606F;&#x3002;&#x5C31;&#x4E5F;&#x662F;&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x573A;&#x666F;&#x3002;LIST&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5B8C;&#x6210;&#x6392;&#x961F;&#xFF0C;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x7684;&#x539F;&#x5219;&#x3002;
+
+
+(&#x56DB;)set
+
+
+&#x56E0;&#x4E3A;set&#x5806;&#x653E;&#x7684;&#x662F;&#x4E00;&#x5806;&#x4E0D;&#x91CD;&#x590D;&#x503C;&#x7684;&#x96C6;&#x5408;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x505A;&#x5168;&#x5C40;&#x53BB;&#x91CD;&#x7684;&#x529F;&#x80FD;&#x3002;
+
+&#x53E6;&#x5916;&#xFF0C;&#x5C31;&#x662F;&#x5229;&#x7528;&#x4EA4;&#x96C6;&#x3001;&#x5E76;&#x96C6;&#x3001;&#x5DEE;&#x96C6;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x5171;&#x540C;&#x559C;&#x597D;&#xFF0C;&#x5168;&#x90E8;&#x7684;&#x559C;&#x597D;&#xFF0C;&#x81EA;&#x5DF1;&#x72EC;&#x6709;&#x7684;&#x559C;&#x597D;&#x7B49;&#x529F;&#x80FD;&#x3002;
+
+
+(&#x4E94;)sorted set
+
+
+sorted set&#x591A;&#x4E86;&#x4E00;&#x4E2A;&#x6743;&#x91CD;&#x53C2;&#x6570;score,&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x80FD;&#x591F;&#x6309;score&#x8FDB;&#x884C;&#x6392;&#x5217;&#x3002;&#x53EF;&#x4EE5;&#x505A;&#x6392;&#x884C;&#x699C;&#x5E94;&#x7528;&#xFF0C;&#x53D6;TOP N&#x64CD;&#x4F5C;&#x3002;
+</code></pre><h2 id="&#x7BA1;&#x9053;">&#x7BA1;&#x9053;</h2>
+<p>redis-py&#x9ED8;&#x8BA4;&#x5728;&#x6267;&#x884C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#xFF08;&#x8FDE;&#x63A5;&#x6C60;&#x7533;&#x8BF7;&#x8FDE;&#x63A5;&#xFF09;&#x548C;&#x65AD;&#x5F00;&#xFF08;&#x5F52;&#x8FD8;&#x8FDE;&#x63A5;&#x6C60;&#xFF09;&#x4E00;&#x6B21;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5728;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x4E2D;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;pipline&#x5B9E;&#x73B0;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E14;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x6B21;pipline &#x662F;&#x539F;&#x5B50;&#x6027;&#x64CD;&#x4F5C;&#x3002;&#x7C7B;&#x4F3C;&#x4E8E;mysql&#x4E2D;&#x7684;&#x4E8B;&#x52A1;&#xFF0C;&#x8981;&#x4E48;&#x4E00;&#x8D77;&#x6210;&#x529F;&#x8981;&#x4E48;&#x4E00;&#x8D77;&#x5931;&#x8D25;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> redis
+
+pool = redis.ConnectionPool(host=<span class="hljs-string">&apos;10.211.55.4&apos;</span>, port=<span class="hljs-number">6379</span>)
+r = redis.Redis(connection_pool=pool)
+<span class="hljs-comment"># pipe = r.pipeline(transaction=False)</span>
+pipe = r.pipeline(transaction=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#xFF08;&#x4E8B;&#x52A1;&#xFF09;</span>
+
+pipe.set(<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;alex&apos;</span>)  <span class="hljs-comment"># &#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x6267;&#x884C;&#x64CD;&#x4F5C;</span>
+xxx <span class="hljs-comment"># &#x62A5;&#x9519;&#x4E4B;&#x540E;&#x524D;&#x9762;&#x7684;&#x4E5F;&#x4E0D;&#x4F1A;&#x6267;&#x884C;</span>
+pipe.set(<span class="hljs-string">&apos;role&apos;</span>, <span class="hljs-string">&apos;sb&apos;</span>)
+
+pipe.execute()  <span class="hljs-comment"># &#x6267;&#x884C;&#x7BA1;&#x9053;</span>
+</code></pre>
+<h2 id="&#x53D1;&#x5E03;&#x8BA2;&#x9605;">&#x53D1;&#x5E03;&#x8BA2;&#x9605;</h2>
+<p>&#x591A;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x53EF;&#x4EE5;&#x76D1;&#x542C;redis&#x4E2D;&#x7684;&#x4E00;&#x4E2A;name&#xFF0C;&#x53D1;&#x5E03;&#x8005;&#x901A;&#x8FC7;&#x7ED9;name&#x8BBE;&#x7F6E;set&#x503C;&#xFF0C;&#x6BCF;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x4F1A;&#x6536;&#x5230;&#x6D88;&#x606F;</p>
+<p>&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x7684;&#x7279;&#x6027;&#x7528;&#x6765;&#x505A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x65F6;&#x804A;&#x5929;&#x7CFB;&#x7EDF;&#x518D;&#x9002;&#x5408;&#x4E0D;&#x8FC7;&#x4E86;&#xFF0C;&#x5F53;&#x7136;&#x8FD9;&#x6837;&#x7684;&#x4E1C;&#x897F;&#x5F00;&#x53D1;&#x4E2D;&#x5F88;&#x5C11;&#x6D89;&#x53CA;&#x5230;&#x3002;&#x518D;&#x6BD4;&#x5982;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5E38;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5728;&#x5199;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;redis&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#xFF0C;&#x4F7F;&#x5F97;&#x5199;&#x5165;&#x503C;&#x53CA;&#x65F6;&#x53D1;&#x5E03;&#x5230;&#x5404;&#x4E2A;&#x8BFB;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5C31;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x4E00;&#x81F4;&#x6027;&#x3002;&#x518D;&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x7F51;&#x7AD9;&#x4E2D;&#xFF0C;&#x6709;100&#x4E2A;&#x7C89;&#x4E1D;&#x8BA2;&#x9605;&#x4E86;&#x4F60;&#xFF0C;&#x5F53;&#x4F60;&#x53D1;&#x5E03;&#x65B0;&#x6587;&#x7AE0;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x7C89;&#x4E1D;&#x4EEC;&#x62C9;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BA2;&#x9605;&#x8005;&#xFF1A;</span>
+<span class="hljs-keyword">import</span> redis
+
+r = redis.Redis(host=<span class="hljs-string">&apos;127.0.0.1&apos;</span>)
+
+pub = r.pubsub()  <span class="hljs-comment"># &#x751F;&#x6210;&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x5BF9;&#x8C61;</span>
+
+pub.subscribe(<span class="hljs-string">&apos;name&apos;</span>)  <span class="hljs-comment"># &#x76D1;&#x542C;redis&#x7684;&#x67D0;&#x4E2A;name</span>
+pub.parse_response()  <span class="hljs-comment"># &#x5F00;&#x542F;&#x76D1;&#x542C;</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:  <span class="hljs-comment"># &#x6301;&#x7EED;&#x76D1;&#x542C;</span>
+    msg = pub.parse_response()
+    print(msg)
+
+<span class="hljs-comment"># &#x53D1;&#x5E03;&#x8005;&#xFF1A;</span>
+<span class="hljs-keyword">import</span> redis
+r = redis.Redis(host=<span class="hljs-string">&apos;127.0.0.1&apos;</span>)
+r.publish(<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-string">&apos;content&apos;</span>)  <span class="hljs-comment"># &#x901A;&#x8FC7;name&#x952E;&#x53D1;&#x5E03;&#x6D88;&#x606F;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gitlab.html" class="navigation navigation-prev " aria-label="Previous page: gitlab">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="RabbitMQ.html" class="navigation navigation-next " aria-label="Next page: RabbitMQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redis","level":"1.5","depth":1,"next":{"title":"RabbitMQ","level":"1.6","depth":1,"path":"RabbitMQ.md","ref":"RabbitMQ.md","articles":[]},"previous":{"title":"gitlab","level":"1.4","depth":1,"path":"gitlab.md","ref":"gitlab.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"Redis.md","mtime":"2020-05-11T04:11:58.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T04:47:57.266Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
