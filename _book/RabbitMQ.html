@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="Celery.html" />
+    
     
     <link rel="prev" href="Redis.html" />
     
@@ -165,6 +167,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="Celery.html">
+            
+                <a href="Celery.html">
+            
+                    
+                    Celery
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -232,6 +247,276 @@ print(q.get())  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x
 <h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x6D88;&#x606F;&#x961F;&#x5217;">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x6D88;&#x606F;&#x961F;&#x5217;</h2>
 <p>&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#x91CD;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x5E94;&#x7528;&#x89E3;&#x8026;&#xFF0C;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#xFF0C;&#x6D41;&#x91CF;&#x524A;&#x950B;&#x7B49;&#x95EE;&#x9898;&#xFF0C;&#x5B9E;&#x73B0;&#x9AD8;&#x6027;&#x80FD;&#xFF0C;&#x9AD8;&#x53EF;&#x7528;&#xFF0C;&#x53EF;&#x4F38;&#x7F29;&#x548C;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x67B6;&#x6784;&#x3002;&#x76EE;&#x524D;&#x4F7F;&#x7528;&#x8F83;&#x591A;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x6709;ActiveMQ&#xFF0C;RabbitMQ&#xFF0C;ZeroMQ&#xFF0C;Kafka&#xFF0C;MetaMQ&#xFF0C;RocketMQ&#x3002;</p>
 <p><img src="img/waimai.png" alt="&#x8BF4;&#x660E;"></p>
+<h2 id="rabbitmq">RabbitMQ</h2>
+<p>RabbitMQ &#x662F;&#x4E00;&#x4E2A;&#x7531; Erlang &#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x7684; AMQP &#x7684;&#x5F00;&#x6E90;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>rabbitMQ&#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E;AMQP&#x534F;&#x8BAE;&#x7684;&#x6D88;&#x606F;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x5728;&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x63D0;&#x4F9B;&#x53EF;&#x9760;&#x7684;&#x6D88;&#x606F;&#x4F20;&#x8F93;&#x3002;&#x5728;&#x6613;&#x7528;&#x6027;&#xFF0C;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x9AD8;&#x53EF;&#x7528;&#x6027;&#x4E0A;&#x8868;&#x73B0;&#x4F18;&#x79C0;&#x3002;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x4E2D;&#x95F4;&#x4EF6;&#x5229;&#x4E8E;&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x7684;&#x89E3;&#x8026;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x65E0;&#x9700;&#x77E5;&#x9053;&#x6D88;&#x8D39;&#x8005;&#xFF08;&#x670D;&#x52A1;&#x7AEF;&#xFF09;&#x7684;&#x5B58;&#x5728;&#x3002;&#x800C;&#x4E14;&#x4E24;&#x7AEF;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#xFF0C;&#x5927;&#x5927;&#x63D0;&#x4F9B;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x3002;</p>
+<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<h4 id="windows">Windows</h4>
+<ol>
+<li>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;rabbitmq&#xFF1A;<a href="https://www.rabbitmq.com/download.html&#x3002;&#x5168;&#x9ED8;&#x8BA4;" target="_blank">https://www.rabbitmq.com/download.html&#x3002;&#x5168;&#x9ED8;&#x8BA4;</a></li>
+<li>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;Erlang&#xFF1A;<a href="http://www.erlang.org/download/otp_win64_17.3.exe&#x3002;&#x5168;&#x9ED8;&#x8BA4;" target="_blank">http://www.erlang.org/download/otp_win64_17.3.exe&#x3002;&#x5168;&#x9ED8;&#x8BA4;</a></li>
+</ol>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5F00;&#x59CB;&#x83DC;&#x5355;&#x51FA;&#x73B0;<code>RabbitMQ Command Prompt (sbin dir)</code>&#xFF0C;&#x6253;&#x5F00;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;<code>rabbitmq-plugins enable rabbitmq_management</code> &#x542F;&#x52A8;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x3002;</li>
+<li>&#x4F7F;&#x7528;<code>net stop/start RabbitMQ</code>&#x547D;&#x4EE4;&#x542F;&#x52A8;&#x548C;&#x505C;&#x6B62;rabbitMQ&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5F00;&#x59CB;&#x83DC;&#x5355;&#x7684;stop&#x548C;start&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x542F;&#x52A8;&#x548C;&#x5173;&#x95ED;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#xFF1A;<a href="http://127.0.0.1:15672/" target="_blank">http://127.0.0.1:15672/</a> </li>
+<li>&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x8D26;&#x53F7;&#x767B;&#x9646;&#xFF1A;guest/guest</li>
+</ol>
+<h4 id="linux">Linux</h4>
+<ol>
+<li>&#x5B89;&#x88C5;Erlang<pre><code> &#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#xFF1A;yum -y install make gcc gcc-c++  kernel-devel m4 ncurses-devel openssl openssl-devel xmlto zip unzip
+ &#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;&#xFF1A;wget http://www.erlang.org/download/otp_src_17.3.tar.
+ &#x89E3;&#x538B;&#xFF1A;tar -zxvf otp_src_17.3.tar.gz
+ &#x8FDB;&#x5165;&#x6587;&#x4EF6;&#x5939;&#xFF1A;cd otp_src_17.3
+ &#x914D;&#x7F6E;&#xFF1A;./configure
+ &#x5B89;&#x88C5;&#xFF1A;make &amp;&amp; make install
+</code></pre></li>
+<li><p>&#x5B89;&#x88C5;RabbitMQ</p>
+<pre><code> &#x4E0B;&#x8F7D;&#xFF1A;wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.4.1/rabbitmq-server-3.4.1.tar.gz
+
+ &#x89E3;&#x538B;&#xFF1A;tar -zxvf rabbitmq-server-3.4.1.tar.gz
+
+ cd rabbitmq-server-3.4.1
+
+ &#x5B89;&#x88C5;&#xFF1A;make TARGET_DIR=/usr/local/rabbitmq/ SBIN_DIR=/usr/local/rabbitmq/sbin MAN_DIR=/usr/local/rabbitmq/man DOC_INSTALL_DIR=/usr/local/rabbitmq/doc install
+</code></pre></li>
+<li><p>&#x542F;&#x52A8;&#x5173;&#x95ED;rabbitmq</p>
+<pre><code> cd /usr/local/rabbitmq/sbin
+
+ &#x542F;&#x52A8;: 
+ ./rabbitmq-server start  #&#x63A7;&#x5236;&#x53F0;&#x5F00;&#x542F;
+ ./rabbitmq-server  -detached #&#x540E;&#x53F0;&#x542F;&#x52A8;
+
+ &#x5173;&#x95ED;&#x670D;&#x52A1;:
+ ./rabbitmqctl stop #&#x5173;&#x95ED;
+
+ &#x91CD;&#x542F;&#x670D;&#x52A1;:
+ ./rabbitmq-server restart   # &#x91CD;&#x542F;
+
+ &#x67E5;&#x770B;&#x72B6;&#x6001;:
+ ./rabbitmq-server status
+</code></pre><p>&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF1A;
+```
+&#x5F00;&#x653E;15672,55672&#x7AEF;&#x53E3;</p>
+</li>
+</ol>
+<p>guest&#x8FD9;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x7528;&#x6237;&#x53EA;&#x80FD;&#x901A;&#x8FC7;<a href="http://localhost:15672" target="_blank">http://localhost:15672</a> &#x6765;&#x767B;&#x5F55;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;IP&#x5730;&#x5740;&#x767B;&#x5F55;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x684C;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x662F;&#x65E0;&#x6CD5;&#x7BA1;&#x7406;&#x7EF4;&#x62A4;&#x7684;&#x3002;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x589E;&#x52A0;&#x7528;&#x6237;&#x3002;</p>
+<p>/usr/local/rabbitmq/sbin/rabbitmqctl add_user admin admin</p>
+<p>/usr/local/rabbitmq/sbin/rabbitmqctl list_users</p>
+<p>/usr/local/rabbitmq/sbin/rabbitmqctl set_user_tags admin administrator</p>
+<p>&#x8BBF;&#x95EE;  ip:15672 &#x8F93;&#x5165;&#x7528;&#x6237;&#x5C31;&#x80FD;&#x767B;&#x5F55;&#x4E86;:</p>
+<pre><code>
+### &#x5DE5;&#x4F5C;&#x6A21;&#x578B;
+
+&#x7B80;&#x5355;&#x6A21;&#x5F0F;&#x3001;&#x4EA4;&#x6362;&#x673A;&#x6A21;&#x5F0F;&#xFF08;&#x5305;&#x62EC;&#xFF1A;&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x3001;&#x5173;&#x952E;&#x5B57;&#x6A21;&#x5F0F;&#x3001;&#x6A21;&#x7CCA;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#xFF09;
+
+#### &#x7B80;&#x5355;&#x6A21;&#x5F0F;
+
+&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53EA;&#x80FD;&#x88AB;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x53D6;&#x8D70;&#xFF0C;&#x82E5;&#x591A;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x8981;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;
+
+&#x751F;&#x4EA7;&#x8005;&#xFF1A;
+
+1. &#x94FE;&#x63A5;rabbitmq
+
+2. &#x521B;&#x5EFA;&#x961F;&#x5217;
+
+3. &#x5411;&#x6307;&#x5B9A;&#x7684;&#x961F;&#x5217;&#x63D2;&#x5165;&#x6570;&#x636E;
+
+   ```python
+   import pika  # python&#x64CD;&#x63A7;rabbitmq&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;pip install
+
+   connection = pika.BlockingConnection(pika.ConnectionParameters(&apos;localhost&apos;))  # &#x8FDE;&#x63A5;rabbitmq&#x8FD4;&#x56DE;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;
+   channel = connection.channel()  # &#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x751F;&#x6210;&#x63A7;&#x5236;&#x5BF9;&#x8C61;
+
+   channel.queue_declare(queue=&apos;hello&apos;)  # &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x961F;&#x5217;
+
+   channel.basic_publish(exchange=&apos;&apos;,  # &#x4EA4;&#x6362;&#x673A;&#x53C2;&#x6570;&#x4E3A;&#x7A7A;
+                         routing_key=&apos;hello&apos;,  # &#x6307;&#x5B9A;&#x961F;&#x5217;
+                         body=&apos;Hello World!&apos;)  # &#x6570;&#x636E;
+
+   print(&quot; [x] Sent &apos;Hello World!&apos;&quot;)
+</code></pre><p>&#x6D88;&#x8D39;&#x8005;&#xFF1A;</p>
+<ol>
+<li><p>&#x8FDE;&#x63A5;rabbitmq</p>
+</li>
+<li><p>&#x76D1;&#x542C;&#x6A21;&#x5F0F;</p>
+</li>
+<li><p>&#x786E;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</p>
+<p>```python
+import pika</p>
+<p>connection = pika.BlockingConnection(pika.ConnectionParameters(&apos;localhost&apos;))  # &#x8FDE;&#x63A5;
+channel = connection.channel()</p>
+<p>channel.queue_declare(queue=&apos;hello&apos;)  # &#x540C;&#x6837;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF08;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x751F;&#x4EA7;&#x8005;&#x5148;&#x8FD0;&#x884C;&#xFF09;</p>
+<p>def callback(ch, method, properties, body):  # &#x786E;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</p>
+<pre><code>print(&quot; [x] Received %r&quot; % body)
+# ch.basic_ack(delivery_tag=method.delivery_tag)  # &#x5E94;&#x7B54;&#x4E3A;False&#x65F6;&#x4F7F;&#x7528;
+</code></pre><h1 id="channelbasicqosprefetchcount1---&#x516C;&#x5E73;&#x5206;&#x53D1;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x5C31;&#x9ED8;&#x8BA4;&#x8F6E;&#x8BE2;&#x5206;&#x53D1;">channel.basic_qos(prefetch_count=1)  # &#x516C;&#x5E73;&#x5206;&#x53D1;&#xFF0C;&#x4E0D;&#x8BBE;&#x7F6E;&#x5C31;&#x9ED8;&#x8BA4;&#x8F6E;&#x8BE2;&#x5206;&#x53D1;</h1>
+<h1 id="&#x786E;&#x5B9A;&#x76D1;&#x542C;&#x961F;&#x5217;&#x53C2;&#x6570;">&#x786E;&#x5B9A;&#x76D1;&#x542C;&#x961F;&#x5217;&#x53C2;&#x6570;</h1>
+<p>channel.basic_consume(queue=&apos;hello&apos;,  # &#x6307;&#x5B9A;&#x961F;&#x5217;</p>
+<pre><code>                  auto_ack=True,  # &#x9ED8;&#x8BA4;&#x5E94;&#x7B54;
+                  on_message_callback=callback)  # &#x6307;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6709;&#x4E86;&#x6D88;&#x606F;&#x5C31;&#x6307;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;
+</code></pre></li>
+</ol>
+<p>   print(&apos; [*] Waiting for messages. To exit press CTRL+C&apos;)
+channel.start_consuming()  # &#x542F;&#x52A8;&#x76D1;&#x542C;</p>
+<pre><code>
+
+
+##### &#x53C2;&#x6570;
+
+&#x5E94;&#x7B54;&#x53C2;&#x6570;&#xFF1A;
+
+```python
+auto_ack=False  # &#x5E94;&#x7B54;&#x53C2;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;True&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x53D6;&#x8D70;&#x4E4B;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x6CA1;&#x6709;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x51FA;&#x9519;&#x5219;&#x6570;&#x636E;&#x5C31;&#x76F4;&#x63A5;&#x4E22;&#x5931;&#xFF0C;&#x53C2;&#x6570;&#x6539;&#x4E3A;False&#x8868;&#x793A;&#x624B;&#x52A8;&#x5E94;&#x7B54;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x53D6;&#x8D70;&#x4E4B;&#x540E;&#x8FD8;&#x5B58;&#x5728;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x6307;&#x793A;&#xFF08;&#x4E0B;&#x53E5;&#xFF09;&#xFF0C;&#x7ED9;&#x6D88;&#x606F;&#x961F;&#x5217;&#x6D88;&#x606F;&#x5220;&#x9664;&#x6D88;&#x606F;&#x3002;&#x6839;&#x636E;&#x6570;&#x636E;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x8BBE;&#x7F6E;&#xFF0C;True&#x65F6;&#x6548;&#x7387;&#x9AD8;&#xFF0C;false&#x65F6;&#x6548;&#x7387;&#x4F4E;&#x4F46;&#x5B89;&#x5168;
+ch.basic_ack(delivery_tag=method.delivery_tag)  # &#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6700;&#x540E;&#xFF0C;&#x56FA;&#x5B9A;
+</code></pre><p>&#x6301;&#x4E45;&#x5316;&#x53C2;&#x6570;&#xFF1A;&#x9632;&#x6B62;rabbitmq&#x670D;&#x52A1;&#x5D29;&#x6E83;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x58F0;&#x660E;queue</span>
+channel.queue_declare(queue=<span class="hljs-string">&apos;hello2&apos;</span>, durable=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x82E5;&#x58F0;&#x660E;&#x8FC7;&#xFF0C;&#x5219;&#x6362;&#x4E00;&#x4E2A;&#x540D;&#x5B57;(&#x4E0D;&#x7136;&#x4F1A;&#x62A5;&#x9519;)&#xFF0C;&#x5E76;&#x58F0;&#x660E;&#x961F;&#x5217;&#x4E3A;&#x6301;&#x4E45;&#x5316;&#x961F;&#x5217;</span>
+
+channel.basic_publish(exchange=<span class="hljs-string">&apos;&apos;</span>,
+                      routing_key=<span class="hljs-string">&apos;hello2&apos;</span>,
+                      body=<span class="hljs-string">&apos;Hello World!&apos;</span>,
+                      properties=pika.BasicProperties(
+                          delivery_mode=<span class="hljs-number">2</span>,  <span class="hljs-comment"># 2&#x8BA9;&#x4FE1;&#x606F;&#x6301;&#x4E45;&#x5316;&#xFF0C;</span>
+                          )
+                      )
+</code></pre>
+<p>&#x5206;&#x53D1;&#x53C2;&#x6570;&#xFF1A;&#x6709;&#x4E24;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x540C;&#x65F6;&#x76D1;&#x542C;&#x4E00;&#x4E2A;&#x7684;&#x961F;&#x5217;&#x3002;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;sleep2&#x79D2;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;sleep1&#x79D2;&#xFF0C;&#x4F46;&#x662F;&#x5904;&#x7406;&#x7684;&#x6D88;&#x606F;&#x662F;&#x4E00;&#x6837;&#x591A;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EB;&#x8F6E;&#x8BE2;&#x5206;&#x53D1;&#xFF08;round-robin&#xFF09;&#x4E0D;&#x7BA1;&#x8C01;&#x5FD9;&#xFF0C;&#x90FD;&#x4E0D;&#x4F1A;&#x591A;&#x7ED9;&#x6D88;&#x606F;&#xFF0C;&#x603B;&#x662F;&#x4F60;&#x4E00;&#x4E2A;&#x6211;&#x4E00;&#x4E2A;&#x3002;&#x60F3;&#x8981;&#x505A;&#x5230;&#x516C;&#x5E73;&#x5206;&#x53D1;&#xFF08;fair dispatch&#xFF09;&#xFF0C;&#x5FC5;&#x987B;&#x5173;&#x95ED;&#x81EA;&#x52A8;&#x5E94;&#x7B54;ack&#xFF0C;&#x6539;&#x6210;&#x624B;&#x52A8;&#x5E94;&#x7B54;&#x3002;&#x4F7F;&#x7528;basicQos(perfetch=1)&#x9650;&#x5236;&#x6BCF;&#x6B21;&#x53EA;&#x53D1;&#x9001;&#x4E0D;&#x8D85;&#x8FC7;1&#x6761;&#x6D88;&#x606F;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x53CD;&#x9988;&#x544A;&#x77E5;&#x961F;&#x5217;&#xFF0C;&#x624D;&#x4F1A;&#x53D1;&#x9001;&#x4E0B;&#x4E00;&#x4E2A;&#x3002;</p>
+<pre><code class="lang-python">channel.basic_qos(prefetch_count=<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x5728;&#x76D1;&#x542C;&#x961F;&#x5217;&#x53C2;&#x6570;&#x4E4B;&#x524D;</span>
+</code></pre>
+<h4 id="&#x4EA4;&#x6362;&#x673A;&#x6A21;&#x5F0F;">&#x4EA4;&#x6362;&#x673A;&#x6A21;&#x5F0F;</h4>
+<h5 id="&#x53D1;&#x5E03;&#x8BA2;&#x9605;">&#x53D1;&#x5E03;&#x8BA2;&#x9605;</h5>
+<p>&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x548C;&#x7B80;&#x5355;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x4F1A;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x7684;&#x8BA2;&#x9605;&#x8005;&#xFF0C;&#x800C;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x88AB;&#x6D88;&#x8D39;&#x4E00;&#x6B21;&#x4FBF;&#x6D88;&#x5931;&#x3002;&#x6240;&#x4EE5;&#xFF0C;RabbitMQ&#x5B9E;&#x73B0;&#x53D1;&#x5E03;&#x548C;&#x8BA2;&#x9605;&#x65F6;&#xFF0C;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x8BA2;&#x9605;&#x8005;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x800C;&#x53D1;&#x5E03;&#x8005;&#x53D1;&#x5E03;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x6D88;&#x606F;&#x653E;&#x7F6E;&#x5728;&#x6240;&#x6709;&#x76F8;&#x5173;&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<p><img src="img/fabu.png" alt="fabu"></p>
+<p>&#x751F;&#x4EA7;&#x8005;&#xFF1A;</p>
+<ol>
+<li><p>&#x8FDE;&#x63A5;rabbitmq</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x4EA4;&#x6362;&#x673A;&#xFF08;&#x4E0D;&#x521B;&#x5EFA;&#x961F;&#x5217;&#xFF09;</p>
+</li>
+<li><p>&#x5411;&#x4EA4;&#x6362;&#x673A;&#x63D2;&#x6570;&#x636E;&#xFF08;&#x4EA4;&#x6362;&#x673A;&#x4F1A;&#x5206;&#x53D1;&#x7ED9;&#x6BCF;&#x4E2A;&#x961F;&#x5217;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pika  <span class="hljs-comment"># python&#x64CD;&#x63A7;rabbitmq&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x9700;&#x8981;pip install</span>
+
+connection = pika.BlockingConnection(pika.ConnectionParameters(<span class="hljs-string">&apos;localhost&apos;</span>))  <span class="hljs-comment"># &#x8FDE;&#x63A5;rabbitmq&#x8FD4;&#x56DE;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;</span>
+channel = connection.channel()  <span class="hljs-comment"># &#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x751F;&#x6210;&#x63A7;&#x5236;&#x5BF9;&#x8C61;</span>
+
+channel.exchange_declare(exchange=<span class="hljs-string">&apos;logs&apos;</span>, exchange_type=<span class="hljs-string">&apos;fanout&apos;</span>)  <span class="hljs-comment"># &#x58F0;&#x660E;&#x540D;&#x4E3A;logs&#x7684;&#x4EA4;&#x6362;&#x673A;&#xFF0C;fanout&#x8868;&#x793A;&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;</span>
+
+message = <span class="hljs-string">&quot; info &#xFF1A; hello world &quot;</span>
+channel.basic_publish(exchange=<span class="hljs-string">&apos;logs&apos;</span>,  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4EA4;&#x6362;&#x673A;</span>
+                      routing_key=<span class="hljs-string">&apos;&apos;</span>,  <span class="hljs-comment"># &#x961F;&#x5217;&#x4E3A;&#x7A7A;</span>
+                      body=message)  <span class="hljs-comment"># &#x6570;&#x636E;</span>
+
+print(<span class="hljs-string">&quot; [x] Sent &apos;Hello World!&apos;&quot;</span>)
+connection.close()  <span class="hljs-comment"># &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+</code></pre>
+</li>
+</ol>
+<p>&#x6D88;&#x8D39;&#x8005;&#xFF1A;</p>
+<ol>
+<li><p>&#x8FDE;&#x63A5;rabbitmq</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x961F;&#x5217;&#xFF08;&#x6BCF;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x961F;&#x5217;&#xFF09;</p>
+</li>
+<li><p>&#x7ED1;&#x5B9A;&#x5230;&#x4EA4;&#x6362;&#x673A;</p>
+</li>
+<li><p>&#x76D1;&#x542C;&#x5E76;&#x786E;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pika
+
+connection = pika.BlockingConnection(pika.ConnectionParameters(<span class="hljs-string">&apos;localhost&apos;</span>))  <span class="hljs-comment"># &#x8FDE;&#x63A5;</span>
+channel = connection.channel()
+
+channel.exchange_declare(exchange=<span class="hljs-string">&apos;logs&apos;</span>, exchange_type=<span class="hljs-string">&apos;fanout&apos;</span>)  <span class="hljs-comment"># &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x4EA4;&#x6362;&#x673A;&#xFF0C;&#x8981;&#x786E;&#x4FDD;&#x6709;&#x4EA4;&#x6362;&#x673A;&#xFF08;&#x5982;&#x679C;&#x6D88;&#x8D39;&#x8005;&#x5148;&#x542F;&#x52A8;&#xFF09;</span>
+
+result = channel.queue_declare(<span class="hljs-string">&apos;&apos;</span>, exclusive=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x521B;&#x5EFA;&#x961F;&#x5217;&#xFF0C;exclusive&#x4E3A;True&#x8868;&#x793A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x540D;&#x5B57;&#x961F;&#x5217;</span>
+queue_name = result.method.queue  <span class="hljs-comment"># &#x62FF;&#x5230;&#x961F;&#x5217;&#x540D;&#x5B57;</span>
+
+channel.queue_bind(exchange=<span class="hljs-string">&apos;logs&apos;</span>, queue=queue_name)  <span class="hljs-comment"># &#x5C06;&#x961F;&#x5217;&#x7ED1;&#x5B9A;&#x5230;&#x6307;&#x5B9A;&#x4EA4;&#x6362;&#x673A;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callback</span><span class="hljs-params">(ch, method, properties, body)</span>:</span>  <span class="hljs-comment"># &#x786E;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+    print(<span class="hljs-string">&quot; [x] Received %r&quot;</span> % body)
+
+<span class="hljs-comment"># &#x786E;&#x5B9A;&#x76D1;&#x542C;&#x961F;&#x5217;&#x53C2;&#x6570;</span>
+channel.basic_consume(queue=queue_name,  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x961F;&#x5217;</span>
+                      auto_ack=<span class="hljs-keyword">True</span>,  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x5E94;&#x7B54;</span>
+                      on_message_callback=callback)  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x6709;&#x4E86;&#x6D88;&#x606F;&#x5C31;&#x6307;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+
+print(<span class="hljs-string">&apos; %s [*] Waiting for messages. To exit press CTRL+C&apos;</span> % queue_name)
+channel.start_consuming()  <span class="hljs-comment"># &#x542F;&#x52A8;&#x76D1;&#x542C;</span>
+</code></pre>
+</li>
+</ol>
+<h5 id="&#x5173;&#x952E;&#x5B57;&#x6A21;&#x5F0F;">&#x5173;&#x952E;&#x5B57;&#x6A21;&#x5F0F;</h5>
+<p>&#x961F;&#x5217;&#x5728;&#x548C;&#x4EA4;&#x6362;&#x673A;&#x7ED1;&#x5B9A;&#x65F6;&#x4F1A;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x53D1;&#x5E03;&#x7740;&#x5728;&#x53D1;&#x5E03;&#x65F6;&#x4E5F;&#x4F1A;&#x8BBE;&#x7F6E;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5173;&#x952E;&#x5B57;&#x5339;&#x914D;&#x4E0A;&#x624D;&#x4F1A;&#x7ED9;&#x76F8;&#x5E94;&#x7684;&#x961F;&#x5217;&#x53D1;&#x9001;&#x6D88;&#x606F;</p>
+<p>&#x53D1;&#x5E03;&#x8005;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pika
+<span class="hljs-comment"># &#x8FDE;&#x63A5;</span>
+connection = pika.BlockingConnection(pika.ConnectionParameters(host=<span class="hljs-string">&apos;localhost&apos;</span>))
+channel = connection.channel()
+
+channel.exchange_declare(exchange=<span class="hljs-string">&apos;logs2&apos;</span>, exchange_type=<span class="hljs-string">&apos;direct&apos;</span>)  <span class="hljs-comment"># &#x6A21;&#x5F0F;&#x6362;&#x6210;direct</span>
+
+message = <span class="hljs-string">&quot;info: Hello Yuan!&quot;</span>
+channel.basic_publish(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                      routing_key=<span class="hljs-string">&apos;info&apos;</span>,  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4E0A;&#x5173;&#x952E;&#x5B57;</span>
+                      body=message)
+print(<span class="hljs-string">&quot; [x] Sent %r&quot;</span> % message)
+connection.close()
+</code></pre>
+<p>&#x6D88;&#x8D39;&#x8005;&#xFF1A;</p>
+<pre><code class="lang-python">
+<span class="hljs-keyword">import</span> pika
+
+connection = pika.BlockingConnection(pika.ConnectionParameters(host=<span class="hljs-string">&apos;localhost&apos;</span>))
+channel = connection.channel()
+
+channel.exchange_declare(exchange=<span class="hljs-string">&apos;logs2&apos;</span>, exchange_type=<span class="hljs-string">&apos;direct&apos;</span>)  <span class="hljs-comment"># &#x4EA4;&#x6362;&#x673A;&#x7C7B;&#x578B;</span>
+
+result = channel.queue_declare(<span class="hljs-string">&quot;&quot;</span>,exclusive=<span class="hljs-keyword">True</span>)  <span class="hljs-comment"># &#x961F;&#x5217;</span>
+queue_name = result.method.queue
+
+<span class="hljs-comment"># &#x5C06;&#x961F;&#x5217;&#x7ED1;&#x5B9A;&#x5230;&#x4EA4;&#x6362;&#x673A;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E0A;&#x5173;&#x952E;&#x5B57;,&#x53EF;&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;,&#x5199;&#x591A;&#x4E2A;queue_bind</span>
+channel.queue_bind(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                   queue=queue_name,
+                   routing_key=<span class="hljs-string">&apos;info&apos;</span>)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x5173;&#x952E;&#x5B57;</span>
+channel.queue_bind(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                   queue=queue_name,
+                   routing_key=<span class="hljs-string">&apos;error&apos;</span>)
+
+print(<span class="hljs-string">&apos; [*] Waiting for logs. To exit press CTRL+C&apos;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callback</span><span class="hljs-params">(ch, method, properties, body)</span>:</span>  <span class="hljs-comment"># &#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+    print(<span class="hljs-string">&quot; [x] %r&quot;</span> % body)
+
+channel.basic_consume(queue=queue_name,  <span class="hljs-comment"># &#x6307;&#x5B9A;&#x76D1;&#x542C;&#x53C2;&#x6570;</span>
+                      auto_ack=<span class="hljs-keyword">True</span>,
+                      on_message_callback=callback)
+
+channel.start_consuming()
+</code></pre>
+<h5 id="&#x901A;&#x914D;&#x7B26;&#x6A21;&#x5F0F;">&#x901A;&#x914D;&#x7B26;&#x6A21;&#x5F0F;</h5>
+<p>&#x5728;&#x5173;&#x952E;&#x5B57;&#x6A21;&#x5F0F;&#x4E0A;&#x6DFB;&#x52A0;&#x4E86;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#xFF1A;# &#x5339;&#x914D;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x8BCD;&#xFF0C;* &#x4EC5;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x8BCD;</p>
+<p><img src="img/tongpei.png" alt="&#x901A;&#x914D;&#x7B26;&#x6A21;&#x5F0F;"></p>
+<p>&#x751F;&#x4EA7;&#x8005;&#xFF1A;</p>
+<pre><code class="lang-python">message = <span class="hljs-string">&quot;info: Hello Yuan!&quot;</span>
+channel.basic_publish(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                      routing_key=<span class="hljs-string">&apos;usa.news&apos;</span>,  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4E0A;&#x7EDF;&#x914D;&#x5173;&#x952E;&#x5B57;</span>
+                      body=message)
+print(<span class="hljs-string">&quot; [x] Sent %r&quot;</span> % message)
+connection.close()
+</code></pre>
+<p>&#x6D88;&#x8D39;&#x8005;&#xFF1A;</p>
+<pre><code class="lang-python">channel.queue_bind(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                   queue=queue_name,
+                   routing_key=<span class="hljs-string">&apos;usa.#&apos;</span>)  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x7EDF;&#x914D;&#x5173;&#x952E;&#x5B57;</span>
+channel.queue_bind(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                   queue=queue_name,
+                   routing_key=<span class="hljs-string">&apos;#.news&apos;</span>)
+channel.queue_bind(exchange=<span class="hljs-string">&apos;logs2&apos;</span>,
+                   queue=queue_name,
+                   routing_key=<span class="hljs-string">&apos;*.weather&apos;</span>)
+</code></pre>
 
                                 
                                 </section>
@@ -259,10 +544,14 @@ print(q.get())  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x
 
             
                 
-                <a href="Redis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Redis">
+                <a href="Redis.html" class="navigation navigation-prev " aria-label="Previous page: Redis">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="Celery.html" class="navigation navigation-next " aria-label="Next page: Celery">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -271,7 +560,7 @@ print(q.get())  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RabbitMQ","level":"1.6","depth":1,"previous":{"title":"Redis","level":"1.5","depth":1,"path":"Redis.md","ref":"Redis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"RabbitMQ.md","mtime":"2020-05-11T04:44:42.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T04:47:57.266Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RabbitMQ","level":"1.6","depth":1,"next":{"title":"Celery","level":"1.7","depth":1,"path":"Celery.md","ref":"Celery.md","articles":[]},"previous":{"title":"Redis","level":"1.5","depth":1,"path":"Redis.md","ref":"Redis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"RabbitMQ.md","mtime":"2020-05-11T09:02:59.348Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T09:05:42.044Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
