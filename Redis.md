@@ -52,7 +52,6 @@ redis-py提供两个类Redis和StrictRedis用于实现Redis的命令，StrictRed
         r = redis.Redis(connection_pool=pool)  # 通过连接池生成一个操作对象
         ```
 
-
 ## 操作
 
 redis键值对的值的类型：
@@ -243,6 +242,9 @@ r.type(name)：获取某个name的类型
 
 r.scan(cursor=0):查看所有键（cursor默认为0，查看所有）
 r.scan_iter(match=None, count=None):查看键的生成器，用法同前面的生成器
+
+redis切换库：`select 库名`。总共有16个库，从数字1到16
+用python连接redis的某个库时：redis.Redis(host=xxx,port=6379,db=1) 需要填db参数
 ```
 
 ### 使用场景
