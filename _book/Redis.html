@@ -167,6 +167,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="Celery.html">
+            
+                <a href="Celery.html">
+            
+                    
+                    Celery
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -435,6 +448,9 @@ r.type(name)&#xFF1A;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;name&#x7684;&#x7C7B;&#x578B;
 
 r.scan(cursor=0):&#x67E5;&#x770B;&#x6240;&#x6709;&#x952E;&#xFF08;cursor&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x67E5;&#x770B;&#x6240;&#x6709;&#xFF09;
 r.scan_iter(match=None, count=None):&#x67E5;&#x770B;&#x952E;&#x7684;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x7528;&#x6CD5;&#x540C;&#x524D;&#x9762;&#x7684;&#x751F;&#x6210;&#x5668;
+
+redis&#x5207;&#x6362;&#x5E93;&#xFF1A;`select &#x5E93;&#x540D;`&#x3002;&#x603B;&#x5171;&#x6709;16&#x4E2A;&#x5E93;&#xFF0C;&#x4ECE;&#x6570;&#x5B57;1&#x5230;16
+&#x7528;python&#x8FDE;&#x63A5;redis&#x7684;&#x67D0;&#x4E2A;&#x5E93;&#x65F6;&#xFF1A;redis.Redis(host=xxx,port=6379,db=1) &#x9700;&#x8981;&#x586B;db&#x53C2;&#x6570;
 </code></pre><h3 id="&#x4F7F;&#x7528;&#x573A;&#x666F;">&#x4F7F;&#x7528;&#x573A;&#x666F;</h3>
 <pre><code>(&#x4E00;)String
 
@@ -546,7 +562,7 @@ r.publish(<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-st
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Redis","level":"1.5","depth":1,"next":{"title":"RabbitMQ","level":"1.6","depth":1,"path":"RabbitMQ.md","ref":"RabbitMQ.md","articles":[]},"previous":{"title":"gitlab","level":"1.4","depth":1,"path":"gitlab.md","ref":"gitlab.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"Redis.md","mtime":"2020-05-11T04:11:58.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T04:47:57.266Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Redis","level":"1.5","depth":1,"next":{"title":"RabbitMQ","level":"1.6","depth":1,"path":"RabbitMQ.md","ref":"RabbitMQ.md","articles":[]},"previous":{"title":"gitlab","level":"1.4","depth":1,"path":"gitlab.md","ref":"gitlab.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tinistyle","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"各种小工具使用教程","language":"zh-hans","gitbook":"*","description":"gitbook电子书教程"},"file":{"path":"Redis.md","mtime":"2020-05-12T03:41:57.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T05:35:24.029Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

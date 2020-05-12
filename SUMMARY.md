@@ -6,3 +6,4 @@
 * [gitlab](gitlab.md)
 * [Redis](Redis.md)
 * [RabbitMQ](RabbitMQ.md)
+* [Celery](Celery.md)
